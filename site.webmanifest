@@ -1,0 +1,11 @@
+{
+  "name": "Portal de Estudos",
+  "short_name": "Estudos",
+  "description": "Portal web local-first para seis disciplinas, materiais, busca, memória, foco e backup.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#191919",
+  "theme_color": "#191919",
+  "lang": "pt-BR"
+}
