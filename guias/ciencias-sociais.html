@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Estudos — Introdução às Ciências Sociais</title>
+
+  <style>
+    :root {
+      --azul: #203a5f;
+      --azul-escuro: #142842;
+      --azul-claro: #eef5fb;
+      --laranja: #c47c35;
+      --laranja-claro: #fff6e9;
+      --verde: #347658;
+      --cinza: #687782;
+      --texto: #29343c;
+      --fundo: #edf0f2;
+      --borda: #d7e0e6;
+      --branco: #ffffff;
+      --sombra: 0 8px 24px rgba(20, 45, 70, .11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--fundo);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    .pagina {
+      width: min(1160px, 100%);
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--branco);
+      box-shadow: var(--sombra);
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      padding: 65px 76px 62px;
+      color: var(--branco);
+      background:
+        linear-gradient(135deg, rgba(20, 40, 66, .98), rgba(32, 58, 95, .95)),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 12px,
+          rgba(255,255,255,.04) 13px
+        );
+    }
+
+    header::after {
+      content: "ICS";
+      position: absolute;
+      right: 42px;
+      bottom: -23px;
+      color: rgba(255,255,255,.09);
+      font-family: Arial, sans-serif;
+      font-size: 138px;
+      font-weight: 900;
+      letter-spacing: -9px;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 18px;
+      padding: 5px 14px;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      margin: 0 0 16px;
+      color: #fff;
+      font-size: clamp(34px, 5vw, 59px);
+      line-height: 1.08;
+    }
+
+    header p {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0;
+      color: #e2ebf2;
+      font-size: 19px;
+    }
+
+    main {
+      padding: 46px 76px 75px;
+    }
+
+    .informacoes {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: -82px 0 38px;
+    }
+
+    .info {
+      padding: 17px 19px;
+      border: 1px solid var(--borda);
+      border-top: 4px solid var(--laranja);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--sombra);
+    }
+
+    .info strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--azul);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .info span {
+      font-size: 15px;
+    }
+
+    .aviso {
+      margin: 24px 0 36px;
+      padding: 17px 22px;
+      border-left: 5px solid var(--laranja);
+      border-radius: 0 7px 7px 0;
+      background: var(--laranja-claro);
+    }
+
+    .aviso strong {
+      color: var(--azul);
+    }
+
+    .indice {
+      margin-bottom: 48px;
+      padding: 24px 28px;
+      border: 1px solid #cfdeeb;
+      border-radius: 10px;
+      background: var(--azul-claro);
+    }
+
+    .indice h2 {
+      margin: 0 0 12px;
+      color: var(--azul);
+      font-size: 24px;
+    }
+
+    .indice ol {
+      columns: 2;
+      margin: 0;
+      padding-left: 25px;
+    }
+
+    .indice li {
+      margin: 5px 0;
+      break-inside: avoid;
+    }
+
+    a {
+      color: #1c5d89;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 55px;
+      scroll-margin-top: 20px;
+    }
+
+    .titulo-secao {
+      margin-bottom: 24px;
+      padding-bottom: 11px;
+      border-bottom: 2px solid var(--laranja);
+    }
+
+    .titulo-secao small {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--laranja);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .titulo-secao h2 {
+      margin: 0;
+      color: var(--azul);
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 29px 0 11px;
+      color: var(--azul);
+      font-size: 23px;
+      line-height: 1.25;
+    }
+
+    h4 {
+      margin: 20px 0 8px;
+      color: var(--azul);
+      font-size: 18px;
+    }
+
+    p {
+      margin-top: 8px;
+    }
+
+    ul,
+    ol {
+      padding-left: 27px;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .checklist {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px dotted #dce2e6;
+    }
+
+    .checklist input {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      margin-top: 6px;
+      accent-color: var(--verde);
+    }
+
+    .bloco {
+      margin: 18px 0;
+      padding: 20px 23px;
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .bloco h3:first-child,
+    .bloco h4:first-child {
+      margin-top: 0;
+    }
+
+    .colunas {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 21px;
+    }
+
+    .unidade {
+      border-top: 5px solid var(--azul);
+    }
+
+    .unidade h3 {
+      margin-top: 0;
+    }
+
+    .bibliografia {
+      margin-top: 22px;
+      padding: 19px 23px;
+      border-left: 4px solid var(--azul);
+      border-radius: 0 7px 7px 0;
+      background: #f6fafc;
+    }
+
+    .bibliografia h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .nota {
+      color: var(--cinza);
+      font-size: 14px;
+    }
+
+    .semana-card {
+      display: grid;
+      grid-template-columns: 100px 115px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin: 14px 0;
+      padding: 18px;
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      background: #fcfdfe;
+    }
+
+    .semana {
+      color: var(--laranja);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .data {
+      color: var(--azul);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .semana-conteudo strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--azul);
+      font-size: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 4px 5px 4px 0;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--azul-claro);
+      color: var(--azul);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .tag.avaliacao {
+      color: #914d17;
+      background: #fff0dc;
+    }
+
+    .tag.feriado {
+      color: #775858;
+      background: #f3eeee;
+    }
+
+    table {
+      width: 100%;
+      margin: 19px 0 25px;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    th {
+      color: #fff;
+      background: var(--azul);
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 11px 13px;
+      border: 1px solid var(--borda);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafb;
+    }
+
+    .prioridades {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px 27px;
+      padding: 0;
+      list-style: none;
+      counter-reset: prioridade;
+    }
+
+    .prioridades li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      counter-increment: prioridade;
+    }
+
+    .prioridades li::before {
+      display: inline-grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: var(--laranja);
+      color: #fff;
+      content: counter(prioridade);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .progresso {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 0 -76px 34px;
+      padding: 12px 76px;
+      color: #fff;
+      background: var(--azul-escuro);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .barra {
+      width: 220px;
+      height: 9px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,.25);
+    }
+
+    .barra-interna {
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--laranja);
+      transition: width .25s ease;
+    }
+
+    .botao-limpar {
+      margin-left: auto;
+      padding: 6px 11px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 5px;
+      color: #fff;
+      background: transparent;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .botao-limpar:hover {
+      background: rgba(255,255,255,.12);
+    }
+
+    footer {
+      padding: 29px 76px;
+      color: #e2ebf1;
+      background: var(--azul-escuro);
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 880px) {
+      header {
+        padding: 45px 25px 100px;
+      }
+
+      header::after {
+        right: 15px;
+        bottom: -8px;
+        font-size: 90px;
+      }
+
+      main {
+        padding: 30px 22px 55px;
+      }
+
+      .informacoes {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -72px;
+      }
+
+      .colunas,
+      .prioridades {
+        grid-template-columns: 1fr;
+      }
+
+      .progresso {
+        margin: 0 -22px 30px;
+        padding: 11px 22px;
+      }
+
+      footer {
+        padding: 25px 22px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .informacoes {
+        grid-template-columns: 1fr;
+      }
+
+      .indice ol {
+        columns: 1;
+      }
+
+      .semana-card {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .barra {
+        width: 110px;
+      }
+
+      .titulo-secao h2 {
+        font-size: 27px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .pagina {
+        width: 100%;
+        box-shadow: none;
+      }
+
+      .progresso {
+        position: static;
+        margin: 0 0 25px;
+        color: #000;
+        background: #fff;
+        border: 1px solid #ccc;
+      }
+
+      .barra,
+      .botao-limpar {
+        display: none;
+      }
+
+      header {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .bloco,
+      .bibliografia,
+      .aviso,
+      .semana-card {
+        break-inside: avoid;
+      }
+
+      a {
+        color: #000;
+      }
+    }
+  </style>
+
+<style id="portal-estudos-integracao">
+  .portal-estudos-voltar{position:fixed;right:18px;bottom:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:999px;background:#102c43;color:#fff!important;text-decoration:none!important;font:700 13px/1.2 Arial,sans-serif;box-shadow:0 9px 24px rgba(16,44,67,.24);border:1px solid rgba(255,255,255,.18)}
+  .portal-estudos-voltar:hover{transform:translateY(-1px);background:#173f5f;text-decoration:none!important}
+  @media(max-width:620px){.portal-estudos-voltar{right:12px;bottom:12px;padding:10px 13px;font-size:12px}}
+  @media print{.portal-estudos-voltar{display:none!important}}
+</style>
+<style id="notion-dark-override">
+  :root{--azul:#f2f2f2;--azul-2:#dfdfdf;--azul-claro:#202020;--dourado:#9d9d9d;--creme:#1f1f1f;--texto:#ededed;--cinza:#a4a4a4;--borda:#323232;--verde:#d9d9d9;--sombra:0 20px 40px rgba(0,0,0,.22)}
+  html{scroll-behavior:smooth}
+  body{background:#191919!important;color:var(--texto)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;line-height:1.7}
+  .pagina{max-width:1160px!important;background:#191919!important;box-shadow:none!important}
+  .portal-topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 24px;border-bottom:1px solid var(--borda);background:#171717;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+  .portal-topbar .left{display:flex;align-items:center;gap:10px;min-width:0}
+  .portal-topbar .mark{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:#222;border:1px solid #333;color:#f3f3f3;font-size:12px;font-weight:800;letter-spacing:.06em}
+  .portal-topbar strong{display:block;font-size:14px;letter-spacing:-.01em}
+  .portal-topbar span{display:block;color:var(--cinza);font-size:12px}
+  .portal-topbar .back-link{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid var(--borda);background:#202020;color:#f0f0f0;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap}
+  header{background:#1f1f1f!important;border:1px solid var(--borda);border-radius:20px;padding:42px 44px 36px!important;margin:22px 24px 0;overflow:hidden}
+  header::after{display:none!important}
+  .etiqueta{background:#222!important;border-color:#353535!important;color:#bdbdbd!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-weight:700!important;letter-spacing:.08em!important;padding:6px 10px!important}
+  header h1{font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;color:#f4f4f4!important;font-size:clamp(30px,4vw,46px)!important;line-height:1.1!important;letter-spacing:-.03em}
+  header p{color:#d0d0d0!important;font-size:15px!important;max-width:860px!important}
+  main{padding:24px 24px 50px!important}
+  .informacoes,.meta{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important;gap:12px!important;margin:-36px 0 28px!important;position:relative;z-index:2}
+  .info,.meta-card{background:#202020!important;border:1px solid var(--borda)!important;border-top:none!important;border-radius:14px!important;box-shadow:none!important;padding:16px 16px!important}
+  .info strong,.meta-card strong{color:#8f8f8f!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;margin-bottom:6px!important}
+  .info span,.meta-card span,.meta-card div:last-child{color:#f0f0f0!important;font-size:14px!important}
+  .progresso{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 24px;padding:16px 18px;background:#202020;border:1px solid var(--borda);border-radius:14px}
+  .progresso p{margin:0;color:#d2d2d2;font-size:14px}
+  .barra{flex:1 1 240px;height:8px;background:#2a2a2a;border-radius:999px;overflow:hidden}
+  .barra-interna{height:100%!important;background:#ececec!important;border-radius:inherit!important}
+  .botao-limpar,.limpar{border:1px solid var(--borda)!important;background:#242424!important;color:#ededed!important;border-radius:10px!important;padding:10px 12px!important;font-weight:700!important;cursor:pointer}
+  .aviso{background:#1f1f1f!important;border:1px solid var(--borda)!important;border-left:3px solid #8e8e8e!important;color:#d8d8d8!important;border-radius:14px!important;padding:18px 18px!important;margin:20px 0 28px!important}
+  .aviso strong{color:#f2f2f2!important}
+  .indice{background:#202020!important;border:1px solid var(--borda)!important;border-radius:16px!important;padding:22px 22px!important;margin-bottom:28px!important}
+  .indice h2{color:#f2f2f2!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:20px!important;margin:0 0 12px!important}
+  .indice ol{columns:2;gap:22px}
+  .indice a{color:#d7d7d7!important;text-decoration:none}
+  .indice a:hover{text-decoration:underline}
+  section{margin-bottom:38px!important}
+  .titulo-secao,.secao-titulo{border-bottom:1px solid var(--borda)!important;padding-bottom:12px!important;margin-bottom:18px!important;display:flex;flex-direction:column;gap:4px}
+  .titulo-secao small,.secao-titulo small,.numero{color:#9a9a9a!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;font-weight:700!important}
+  .titulo-secao h2,.secao-titulo h2{color:#f2f2f2!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:28px!important;line-height:1.2!important;margin:0!important;letter-spacing:-.03em}
+  h3,h4{color:#ededed!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;letter-spacing:-.02em}
+  h3{font-size:21px!important;margin:24px 0 10px!important}
+  h4{font-size:17px!important;margin:18px 0 8px!important}
+  p,li,td,th,span,div{word-break:normal;overflow-wrap:anywhere}
+  p{color:#d2d2d2!important}
+  ul,ol{padding-left:24px}
+  li{color:#d8d8d8!important}
+  .bloco,.bloco-destaque,.destaque,.bibliografia,.link-material{background:#202020!important;border:1px solid var(--borda)!important;border-radius:14px!important;padding:18px 18px!important;box-shadow:none!important}
+  .bibliografia{border-left:3px solid #8d8d8d!important;background:#1f1f1f!important}
+  .bibliografia h3{margin-top:0!important}
+  .nota{color:#a5a5a5!important}
+  .termo{color:#f1f1f1!important}
+  .checklist{list-style:none;padding-left:0}
+  .checklist li,.lista-estudo li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #2f2f2f!important}
+  .checklist li:last-child,.lista-estudo li:last-child{border-bottom:none!important}
+  .checklist input{width:17px;height:17px;margin-top:5px;accent-color:#e6e6e6}
+  table{width:100%;border-collapse:collapse;background:#202020;border:1px solid var(--borda)!important;border-radius:14px!important;overflow:hidden}
+  th{background:#232323!important;color:#f3f3f3!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:12px!important;letter-spacing:.04em;text-transform:uppercase}
+  td,th{border:1px solid var(--borda)!important;padding:11px 12px!important;color:#d7d7d7!important}
+  tr:nth-child(even) td{background:#1d1d1d!important}
+  .prioridades,.colunas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px}
+  .prioridades li::before{background:#333!important;color:#fff!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important}
+  a{color:#f0f0f0!important}
+  a:hover{text-decoration:underline}
+  footer{background:#171717!important;border-top:1px solid var(--borda)!important;color:#adadad!important;padding:22px 24px!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important}
+  footer strong{color:#f2f2f2!important}
+  .portal-estudos-voltar{background:#efefef!important;color:#151515!important;border:1px solid #efefef!important;box-shadow:0 14px 28px rgba(0,0,0,.25)!important;padding:11px 15px!important;font:700 13px/1.2 Inter,ui-sans-serif,system-ui,sans-serif!important}
+  .portal-estudos-voltar:hover{background:#ffffff!important;color:#111!important;transform:translateY(-1px)}
+  .link-material{display:inline-flex!important;align-items:center;gap:8px;padding:10px 12px!important;text-decoration:none!important}
+  @media (max-width:850px){header{margin:16px 16px 0;padding:30px 22px!important}main{padding:20px 16px 42px!important}.portal-topbar{padding:14px 16px}.informacoes,.meta{grid-template-columns:1fr 1fr!important;margin-top:-22px!important}.indice ol{columns:1}.prioridades,.colunas{grid-template-columns:1fr!important}footer{padding:18px 16px!important}}
+  @media (max-width:560px){.informacoes,.meta{grid-template-columns:1fr!important}.portal-topbar{flex-direction:column;align-items:flex-start}.portal-topbar .back-link{width:100%;justify-content:center}}
+  @media print{body{background:#fff!important;color:#000!important}.portal-topbar,.portal-estudos-voltar{display:none!important}.pagina{background:#fff!important}header,.bloco,.bibliografia,.aviso,.indice,.info,.meta-card{border-color:#bbb!important;background:#fff!important;color:#000!important;box-shadow:none!important}}
+</style>
+  <link rel="stylesheet" href="../assets/guide-enhancements.css">
+</head>
+
+<body>
+  <div class="pagina">
+    <div class="portal-topbar">
+      <div class="left">
+        <div class="mark">IÀC</div>
+        <div><strong>Introdução às Ciências Sociais</strong><span>Modo escuro • Progresso salvo no navegador</span></div>
+      </div>
+      <a class="back-link" href="../index.html">← Voltar ao Portal</a>
+    </div>
+
+
+    <header>
+      <span class="etiqueta">Guia completo de estudos</span>
+
+      <h1>Introdução às Ciências Sociais</h1>
+
+      <p>
+        Plano de ensino organizado com conteúdos programáticos, cronograma,
+        bibliografia, avaliações, materiais de apoio e checklist para os estudos.
+      </p>
+    </header>
+
+    <main>
+
+      <div class="informacoes">
+        <div class="info">
+          <strong>Código</strong>
+          <span>DIR03043</span>
+        </div>
+
+        <div class="info">
+          <strong>Período</strong>
+          <span>2026.2</span>
+        </div>
+
+        <div class="info">
+          <strong>Professor</strong>
+          <span>Emiliano Maldonado</span>
+        </div>
+
+        <div class="info">
+          <strong>Carga horária</strong>
+          <span>30 horas — 2 créditos</span>
+        </div>
+      </div>
+
+      <div class="progresso">
+        <span id="textoProgresso">0% concluído</span>
+
+        <div class="barra">
+          <div class="barra-interna" id="barraInterna"></div>
+        </div>
+
+        <span id="contador">0 de 0 itens</span>
+
+        <button class="botao-limpar" onclick="limparProgresso()">
+          Limpar progresso
+        </button>
+      </div>
+
+      <div class="aviso">
+        <strong>Como utilizar este documento:</strong>
+        leia os conteúdos em ordem, consulte os textos obrigatórios e
+        complementares no Moodle e marque cada tópico estudado. O cronograma
+        pode sofrer alterações, portanto confira também os anexos e avisos
+        publicados na Sala de Aula Virtual.
+      </div>
+
+      <nav class="indice">
+        <h2>Índice</h2>
+
+        <ol>
+          <li><a href="#identificacao">Identificação da disciplina</a></li>
+          <li><a href="#sumula">Súmula e objetivo geral</a></li>
+          <li><a href="#metodologia">Metodologia de ensino</a></li>
+          <li><a href="#unidade-i">Unidade I — Formação das Ciências Sociais</a></li>
+          <li><a href="#unidade-ii">Unidade II — Sociologia Latino-Americana</a></li>
+          <li><a href="#unidade-iii">Unidade III — Seminários Temáticos</a></li>
+          <li><a href="#cronograma">Cronograma semanal</a></li>
+          <li><a href="#avaliacao">Avaliações e aprovação</a></li>
+          <li><a href="#ferramentas">Ferramentas de apoio</a></li>
+          <li><a href="#bibliografia">Bibliografia</a></li>
+          <li><a href="#prioridades">Prioridades de estudo</a></li>
+          <li><a href="#checklist">Checklist final</a></li>
+        </ol>
+      </nav>
+
+      <section id="identificacao">
+        <div class="titulo-secao">
+          <small>Informações gerais</small>
+          <h2>Identificação da disciplina</h2>
+        </div>
+
+        <table>
+          <tbody>
+            <tr>
+              <th>Universidade</th>
+              <td>Universidade Federal do Rio Grande do Sul</td>
+            </tr>
+            <tr>
+              <th>Unidade</th>
+              <td>Faculdade de Direito</td>
+            </tr>
+            <tr>
+              <th>Departamento</th>
+              <td>Departamento de Direito Público e Filosofia do Direito</td>
+            </tr>
+            <tr>
+              <th>Disciplina</th>
+              <td>Introdução às Ciências Sociais</td>
+            </tr>
+            <tr>
+              <th>Código</th>
+              <td>DIR03043</td>
+            </tr>
+            <tr>
+              <th>Professor</th>
+              <td>Emiliano Maldonado</td>
+            </tr>
+            <tr>
+              <th>E-mail</th>
+              <td>
+                <a href="mailto:emiliano.maldonado@ufrgs.br">
+                  emiliano.maldonado@ufrgs.br
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th>Dia</th>
+              <td>Segunda-feira</td>
+            </tr>
+            <tr>
+              <th>Turmas</th>
+              <td>
+                Turma A — diurno: 9h30 às 11h10<br>
+                Turma B — noturno: 18h30 às 20h10<br>
+                Turma C — noturno: 20h30 às 22h10
+              </td>
+            </tr>
+            <tr>
+              <th>Local</th>
+              <td>Sala 04 da Faculdade de Direito</td>
+            </tr>
+            <tr>
+              <th>Carga horária</th>
+              <td>30 horas-aula</td>
+            </tr>
+            <tr>
+              <th>Créditos</th>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sumula">
+        <div class="titulo-secao">
+          <small>Apresentação</small>
+          <h2>Súmula e objetivo geral</h2>
+        </div>
+
+        <div class="bloco">
+          <h3>Súmula da disciplina</h3>
+
+          <p>
+            A disciplina apresenta noções introdutórias de Ciências Sociais e
+            sua importância para o Direito, abordando a formação do pensamento
+            sociológico clássico, as relações entre conflito e coesão, estrutura
+            e agência, e as matrizes conflitualista, funcionalista e compreensiva.
+          </p>
+
+          <p>
+            Também são estudados o processo de institucionalização e
+            diferenciação das Ciências Sociais, a Sociologia, a Ciência Política,
+            a Antropologia, a Psicologia Social, a História Social, a Geografia
+            Humana e a Sociologia do Direito.
+          </p>
+
+          <p>
+            A disciplina analisa ainda as transformações das sociedades
+            contemporâneas, especialmente a industrialização, a urbanização e
+            a informatização, bem como suas implicações para a política e os
+            direitos humanos.
+          </p>
+
+          <p>
+            Por fim, são estudadas subjetividades, diferenças e desigualdades
+            em sua relação com as lutas dos movimentos sociais no Brasil,
+            abrangendo classe e status; infância, adolescência e velhice;
+            gênero e sexualidade; deficiência, incapacidade e desvantagem; e
+            identidades racial e étnico-cultural.
+          </p>
+        </div>
+
+        <div class="bloco">
+          <h3>Objetivo geral</h3>
+
+          <p>
+            Observar e procurar compreender as ações humanas no amplo contexto
+            das sociedades complexas, buscando entender as figurações, as redes
+            de dependência mútua, os condicionamentos recíprocos da ação, a
+            expansão ou o confinamento da liberdade dos atores e seu
+            relacionamento com os outros.
+          </p>
+
+          <p>
+            O objetivo é fornecer uma base sólida para a compreensão do fenômeno
+            jurídico em particular.
+          </p>
+        </div>
+      </section>
+
+      <section id="metodologia">
+        <div class="titulo-secao">
+          <small>Organização pedagógica</small>
+          <h2>Metodologia e atividades discentes</h2>
+        </div>
+
+        <h3>Metodologia de ensino</h3>
+
+        <ul class="checklist">
+          <li>
+            <input type="checkbox">
+            Aulas expositivas e dialogadas.
+          </li>
+          <li>
+            <input type="checkbox">
+            Atividades didáticas individuais e em grupo.
+          </li>
+          <li>
+            <input type="checkbox">
+            Estudo dirigido.
+          </li>
+          <li>
+            <input type="checkbox">
+            Leitura, descrição e interpretação de textos.
+          </li>
+          <li>
+            <input type="checkbox">
+            Leitura e interpretação de vídeos e outros recursos.
+          </li>
+          <li>
+            <input type="checkbox">
+            Apresentação e debate de temas jurídicos.
+          </li>
+        </ul>
+
+        <h3>Atividades discentes</h3>
+
+        <ul class="checklist">
+          <li>
+            <input type="checkbox">
+            Leitura, reflexão e compreensão do material bibliográfico referente
+            a cada tópico.
+          </li>
+          <li>
+            <input type="checkbox">
+            Realização de leituras complementares.
+          </li>
+          <li>
+            <input type="checkbox">
+            Realização de atividades individuais em classe e extraclasse.
+          </li>
+          <li>
+            <input type="checkbox">
+            Realização de atividades em grupo.
+          </li>
+          <li>
+            <input type="checkbox">
+            Organização de seminários.
+          </li>
+          <li>
+            <input type="checkbox">
+            Preparação de apresentações.
+          </li>
+          <li>
+            <input type="checkbox">
+            Participação nos debates e discussões.
+          </li>
+        </ul>
+      </section>
+
+      <section id="unidade-i">
+        <div class="titulo-secao">
+          <small>Unidade I</small>
+          <h2>A Formação das Ciências Sociais</h2>
+        </div>
+
+        <div class="bloco unidade">
+          <h3>Visão geral</h3>
+
+          <p>
+            A primeira unidade trata do processo histórico de formação das
+            Ciências Sociais e apresenta as principais matrizes do pensamento
+            sociológico clássico, com apoio em textos clássicos e trabalhos
+            analíticos sobre os fundadores da Sociologia.
+          </p>
+        </div>
+
+        <h3>1. Surgimento das Ciências Sociais</h3>
+
+        <ul class="checklist">
+          <li><input type="checkbox">Introdução histórica às Ciências Sociais.</li>
+          <li><input type="checkbox">Contexto histórico de surgimento da Sociologia.</li>
+          <li><input type="checkbox">Transformações sociais da modernidade.</li>
+          <li><input type="checkbox">Industrialização.</li>
+          <li><input type="checkbox">Urbanização.</li>
+          <li><input type="checkbox">Mudanças políticas e econômicas.</li>
+          <li><input type="checkbox">Mudanças culturais e intelectuais.</li>
+          <li><input type="checkbox">Fatores sociais relacionados ao surgimento da Sociologia.</li>
+          <li><input type="checkbox">Fatores epistemológicos relacionados ao surgimento da Sociologia.</li>
+          <li><input type="checkbox">Sociologia como teoria da modernidade.</li>
+        </ul>
+
+        <h3>2. Institucionalização e diferenciação das Ciências Sociais</h3>
+
+        <ul class="checklist">
+          <li><input type="checkbox">Processo de institucionalização das Ciências Sociais.</li>
+          <li><input type="checkbox">Diferenciação dos campos de conhecimento.</li>
+          <li><input type="checkbox">Sociologia.</li>
+          <li><input type="checkbox">Ciência Política.</li>
+          <li><input type="checkbox">Antropologia.</li>
+          <li><input type="checkbox">Psicologia Social.</li>
+          <li><input type="checkbox">História Social.</li>
+          <li><input type="checkbox">Geografia Humana.</li>
+          <li><input type="checkbox">Sociologia do Direito.</li>
+          <li><input type="checkbox">Relação entre Ciências Sociais e Direito.</li>
+        </ul>
+
+        <h3>3. Auguste Comte e o positivismo</h3>
+
+        <ul class="checklist">
+          <li><input type="checkbox">Auguste Comte.</li>
+          <li><input type="checkbox">Definição de Sociologia.</li>
+          <li><input type="checkbox">Positivismo.</li>
