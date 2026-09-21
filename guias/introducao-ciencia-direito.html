@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Estudos — Introdução à Ciência do Direito</title>
+
+  <style>
+    :root {
+      --azul: #1e3a5f;
+      --azul-escuro: #122740;
+      --azul-claro: #eef5fb;
+      --dourado: #b3843b;
+      --dourado-claro: #fff8e9;
+      --verde: #327456;
+      --texto: #27343d;
+      --cinza: #697780;
+      --fundo: #edf0f2;
+      --borda: #d7e0e5;
+      --branco: #fff;
+      --sombra: 0 8px 24px rgba(18, 39, 64, .11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--fundo);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    .pagina {
+      width: min(1160px, 100%);
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--branco);
+      box-shadow: var(--sombra);
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      padding: 65px 76px 62px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(18,39,64,.99), rgba(30,58,95,.95)),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 12px,
+          rgba(255,255,255,.04) 13px
+        );
+    }
+
+    header::after {
+      content: "DIREITO";
+      position: absolute;
+      right: 27px;
+      bottom: -25px;
+      color: rgba(255,255,255,.08);
+      font-family: Arial, sans-serif;
+      font-size: 88px;
+      font-weight: 900;
+      letter-spacing: -7px;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 18px;
+      padding: 5px 14px;
+      border: 1px solid rgba(255,255,255,.52);
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 1;
+      max-width: 850px;
+      margin: 0 0 16px;
+      color: #fff;
+      font-size: clamp(34px, 5vw, 59px);
+      line-height: 1.08;
+    }
+
+    header p {
+      position: relative;
+      z-index: 1;
+      max-width: 830px;
+      margin: 0;
+      color: #e2ebf3;
+      font-size: 19px;
+    }
+
+    main {
+      padding: 46px 76px 76px;
+    }
+
+    .informacoes {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: -82px 0 38px;
+    }
+
+    .info {
+      padding: 17px 19px;
+      border: 1px solid var(--borda);
+      border-top: 4px solid var(--dourado);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--sombra);
+    }
+
+    .info strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--azul);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .info span {
+      font-size: 15px;
+    }
+
+    .progresso {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 0 -76px 34px;
+      padding: 12px 76px;
+      color: #fff;
+      background: var(--azul-escuro);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .barra {
+      width: 220px;
+      height: 9px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,.25);
+    }
+
+    .barra-interna {
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--dourado);
+      transition: width .25s ease;
+    }
+
+    .limpar {
+      margin-left: auto;
+      padding: 6px 11px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 5px;
+      color: #fff;
+      background: transparent;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .limpar:hover {
+      background: rgba(255,255,255,.12);
+    }
+
+    .aviso {
+      margin: 24px 0 36px;
+      padding: 17px 22px;
+      border-left: 5px solid var(--dourado);
+      border-radius: 0 7px 7px 0;
+      background: var(--dourado-claro);
+    }
+
+    .aviso strong {
+      color: var(--azul);
+    }
+
+    .indice {
+      margin-bottom: 48px;
+      padding: 24px 28px;
+      border: 1px solid #cfdeeb;
+      border-radius: 10px;
+      background: var(--azul-claro);
+    }
+
+    .indice h2 {
+      margin: 0 0 12px;
+      color: var(--azul);
+      font-size: 24px;
+    }
+
+    .indice ol {
+      columns: 2;
+      margin: 0;
+      padding-left: 25px;
+    }
+
+    .indice li {
+      margin: 5px 0;
+      break-inside: avoid;
+    }
+
+    a {
+      color: #195c89;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 56px;
+      scroll-margin-top: 20px;
+    }
+
+    .titulo-secao {
+      margin-bottom: 24px;
+      padding-bottom: 11px;
+      border-bottom: 2px solid var(--dourado);
+    }
+
+    .titulo-secao small {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--dourado);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .titulo-secao h2 {
+      margin: 0;
+      color: var(--azul);
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 29px 0 11px;
+      color: var(--azul);
+      font-size: 23px;
+      line-height: 1.25;
+    }
+
+    h4 {
+      margin: 20px 0 8px;
+      color: var(--azul);
+      font-size: 18px;
+    }
+
+    p {
+      margin-top: 8px;
+    }
+
+    ul,
+    ol {
+      padding-left: 27px;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .checklist {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px dotted #dce2e5;
+    }
+
+    .checklist input {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      margin-top: 6px;
+      accent-color: var(--verde);
+    }
+
+    .bloco {
+      margin: 18px 0;
+      padding: 20px 23px;
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .destaque {
+      border-top: 5px solid var(--azul);
+    }
+
+    .colunas {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 21px;
+    }
+
+    .bibliografia {
+      margin-top: 22px;
+      padding: 19px 23px;
+      border-left: 4px solid var(--azul);
+      border-radius: 0 7px 7px 0;
+      background: #f6fafc;
+    }
+
+    .bibliografia h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .nota {
+      color: var(--cinza);
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      margin: 19px 0 25px;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    th {
+      color: #fff;
+      background: var(--azul);
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 11px 13px;
+      border: 1px solid var(--borda);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafb;
+    }
+
+    .calendario {
+      display: grid;
+      grid-template-columns: 105px 115px 1fr;
+      gap: 18px;
+      align-items: start;
+      margin: 14px 0;
+      padding: 18px;
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      background: #fcfdfe;
+    }
+
+    .calendario .data {
+      color: var(--dourado);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: .4px;
+    }
+
+    .calendario .aula {
+      color: var(--azul);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .calendario .conteudo strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--azul);
+      font-size: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 4px 5px 4px 0;
+      padding: 3px 9px;
+      border-radius: 999px;
+      color: var(--azul);
+      background: var(--azul-claro);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .tag.avaliacao {
+      color: #8b5418;
+      background: #fff0d6;
+    }
+
+    .tag.debate {
+      color: #604b7f;
+      background: #f0ebfa;
+    }
+
+    .prioridades {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px 27px;
+      padding: 0;
+      list-style: none;
+      counter-reset: prioridade;
+    }
+
+    .prioridades li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      counter-increment: prioridade;
+    }
+
+    .prioridades li::before {
+      display: inline-grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: var(--dourado);
+      color: #fff;
+      content: counter(prioridade);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 29px 76px;
+      color: #e3edf3;
+      background: var(--azul-escuro);
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 880px) {
+      header {
+        padding: 45px 25px 100px;
+      }
+
+      header::after {
+        right: 15px;
+        bottom: -8px;
+        font-size: 62px;
+      }
+
+      main {
+        padding: 30px 22px 55px;
+      }
+
+      .informacoes {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -72px;
+      }
+
+      .colunas,
+      .prioridades {
+        grid-template-columns: 1fr;
+      }
+
+      .progresso {
+        margin: 0 -22px 30px;
+        padding: 11px 22px;
+      }
+
+      footer {
+        padding: 25px 22px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .informacoes {
+        grid-template-columns: 1fr;
+      }
+
+      .indice ol {
+        columns: 1;
+      }
+
+      .calendario {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .barra {
+        width: 110px;
+      }
+
+      .titulo-secao h2 {
+        font-size: 27px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .pagina {
+        width: 100%;
+        box-shadow: none;
+      }
+
+      .progresso {
+        position: static;
+        margin: 0 0 25px;
+        color: #000;
+        background: #fff;
+        border: 1px solid #ccc;
+      }
+
+      .barra,
+      .limpar {
+        display: none;
+      }
+
+      header {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .bloco,
+      .bibliografia,
+      .aviso,
+      .calendario {
+        break-inside: avoid;
+      }
+
+      a {
+        color: #000;
+      }
+    }
+  </style>
+
+<style id="portal-estudos-integracao">
+  .portal-estudos-voltar{position:fixed;right:18px;bottom:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:999px;background:#102c43;color:#fff!important;text-decoration:none!important;font:700 13px/1.2 Arial,sans-serif;box-shadow:0 9px 24px rgba(16,44,67,.24);border:1px solid rgba(255,255,255,.18)}
+  .portal-estudos-voltar:hover{transform:translateY(-1px);background:#173f5f;text-decoration:none!important}
+  @media(max-width:620px){.portal-estudos-voltar{right:12px;bottom:12px;padding:10px 13px;font-size:12px}}
+  @media print{.portal-estudos-voltar{display:none!important}}
+</style>
+<style id="notion-dark-override">
+  :root{--azul:#f2f2f2;--azul-2:#dfdfdf;--azul-claro:#202020;--dourado:#9d9d9d;--creme:#1f1f1f;--texto:#ededed;--cinza:#a4a4a4;--borda:#323232;--verde:#d9d9d9;--sombra:0 20px 40px rgba(0,0,0,.22)}
+  html{scroll-behavior:smooth}
+  body{background:#191919!important;color:var(--texto)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;line-height:1.7}
+  .pagina{max-width:1160px!important;background:#191919!important;box-shadow:none!important}
+  .portal-topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 24px;border-bottom:1px solid var(--borda);background:#171717;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+  .portal-topbar .left{display:flex;align-items:center;gap:10px;min-width:0}
+  .portal-topbar .mark{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:#222;border:1px solid #333;color:#f3f3f3;font-size:12px;font-weight:800;letter-spacing:.06em}
+  .portal-topbar strong{display:block;font-size:14px;letter-spacing:-.01em}
+  .portal-topbar span{display:block;color:var(--cinza);font-size:12px}
+  .portal-topbar .back-link{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid var(--borda);background:#202020;color:#f0f0f0;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap}
+  header{background:#1f1f1f!important;border:1px solid var(--borda);border-radius:20px;padding:42px 44px 36px!important;margin:22px 24px 0;overflow:hidden}
+  header::after{display:none!important}
+  .etiqueta{background:#222!important;border-color:#353535!important;color:#bdbdbd!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-weight:700!important;letter-spacing:.08em!important;padding:6px 10px!important}
+  header h1{font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;color:#f4f4f4!important;font-size:clamp(30px,4vw,46px)!important;line-height:1.1!important;letter-spacing:-.03em}
+  header p{color:#d0d0d0!important;font-size:15px!important;max-width:860px!important}
+  main{padding:24px 24px 50px!important}
+  .informacoes,.meta{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important;gap:12px!important;margin:-36px 0 28px!important;position:relative;z-index:2}
+  .info,.meta-card{background:#202020!important;border:1px solid var(--borda)!important;border-top:none!important;border-radius:14px!important;box-shadow:none!important;padding:16px 16px!important}
+  .info strong,.meta-card strong{color:#8f8f8f!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;margin-bottom:6px!important}
+  .info span,.meta-card span,.meta-card div:last-child{color:#f0f0f0!important;font-size:14px!important}
+  .progresso{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 24px;padding:16px 18px;background:#202020;border:1px solid var(--borda);border-radius:14px}
+  .progresso p{margin:0;color:#d2d2d2;font-size:14px}
+  .barra{flex:1 1 240px;height:8px;background:#2a2a2a;border-radius:999px;overflow:hidden}
+  .barra-interna{height:100%!important;background:#ececec!important;border-radius:inherit!important}
+  .botao-limpar,.limpar{border:1px solid var(--borda)!important;background:#242424!important;color:#ededed!important;border-radius:10px!important;padding:10px 12px!important;font-weight:700!important;cursor:pointer}
+  .aviso{background:#1f1f1f!important;border:1px solid var(--borda)!important;border-left:3px solid #8e8e8e!important;color:#d8d8d8!important;border-radius:14px!important;padding:18px 18px!important;margin:20px 0 28px!important}
+  .aviso strong{color:#f2f2f2!important}
+  .indice{background:#202020!important;border:1px solid var(--borda)!important;border-radius:16px!important;padding:22px 22px!important;margin-bottom:28px!important}
+  .indice h2{color:#f2f2f2!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:20px!important;margin:0 0 12px!important}
+  .indice ol{columns:2;gap:22px}
+  .indice a{color:#d7d7d7!important;text-decoration:none}
+  .indice a:hover{text-decoration:underline}
+  section{margin-bottom:38px!important}
+  .titulo-secao,.secao-titulo{border-bottom:1px solid var(--borda)!important;padding-bottom:12px!important;margin-bottom:18px!important;display:flex;flex-direction:column;gap:4px}
+  .titulo-secao small,.secao-titulo small,.numero{color:#9a9a9a!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;font-weight:700!important}
+  .titulo-secao h2,.secao-titulo h2{color:#f2f2f2!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:28px!important;line-height:1.2!important;margin:0!important;letter-spacing:-.03em}
+  h3,h4{color:#ededed!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;letter-spacing:-.02em}
+  h3{font-size:21px!important;margin:24px 0 10px!important}
+  h4{font-size:17px!important;margin:18px 0 8px!important}
+  p,li,td,th,span,div{word-break:normal;overflow-wrap:anywhere}
+  p{color:#d2d2d2!important}
+  ul,ol{padding-left:24px}
+  li{color:#d8d8d8!important}
+  .bloco,.bloco-destaque,.destaque,.bibliografia,.link-material{background:#202020!important;border:1px solid var(--borda)!important;border-radius:14px!important;padding:18px 18px!important;box-shadow:none!important}
+  .bibliografia{border-left:3px solid #8d8d8d!important;background:#1f1f1f!important}
+  .bibliografia h3{margin-top:0!important}
+  .nota{color:#a5a5a5!important}
+  .termo{color:#f1f1f1!important}
+  .checklist{list-style:none;padding-left:0}
+  .checklist li,.lista-estudo li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #2f2f2f!important}
+  .checklist li:last-child,.lista-estudo li:last-child{border-bottom:none!important}
+  .checklist input{width:17px;height:17px;margin-top:5px;accent-color:#e6e6e6}
+  table{width:100%;border-collapse:collapse;background:#202020;border:1px solid var(--borda)!important;border-radius:14px!important;overflow:hidden}
+  th{background:#232323!important;color:#f3f3f3!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:12px!important;letter-spacing:.04em;text-transform:uppercase}
+  td,th{border:1px solid var(--borda)!important;padding:11px 12px!important;color:#d7d7d7!important}
+  tr:nth-child(even) td{background:#1d1d1d!important}
+  .prioridades,.colunas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px}
+  .prioridades li::before{background:#333!important;color:#fff!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important}
+  a{color:#f0f0f0!important}
+  a:hover{text-decoration:underline}
+  footer{background:#171717!important;border-top:1px solid var(--borda)!important;color:#adadad!important;padding:22px 24px!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important}
+  footer strong{color:#f2f2f2!important}
+  .portal-estudos-voltar{background:#efefef!important;color:#151515!important;border:1px solid #efefef!important;box-shadow:0 14px 28px rgba(0,0,0,.25)!important;padding:11px 15px!important;font:700 13px/1.2 Inter,ui-sans-serif,system-ui,sans-serif!important}
+  .portal-estudos-voltar:hover{background:#ffffff!important;color:#111!important;transform:translateY(-1px)}
+  .link-material{display:inline-flex!important;align-items:center;gap:8px;padding:10px 12px!important;text-decoration:none!important}
+  @media (max-width:850px){header{margin:16px 16px 0;padding:30px 22px!important}main{padding:20px 16px 42px!important}.portal-topbar{padding:14px 16px}.informacoes,.meta{grid-template-columns:1fr 1fr!important;margin-top:-22px!important}.indice ol{columns:1}.prioridades,.colunas{grid-template-columns:1fr!important}footer{padding:18px 16px!important}}
+  @media (max-width:560px){.informacoes,.meta{grid-template-columns:1fr!important}.portal-topbar{flex-direction:column;align-items:flex-start}.portal-topbar .back-link{width:100%;justify-content:center}}
+  @media print{body{background:#fff!important;color:#000!important}.portal-topbar,.portal-estudos-voltar{display:none!important}.pagina{background:#fff!important}header,.bloco,.bibliografia,.aviso,.indice,.info,.meta-card{border-color:#bbb!important;background:#fff!important;color:#000!important;box-shadow:none!important}}
+</style>
+  <link rel="stylesheet" href="../assets/guide-enhancements.css">
+</head>
+
+<body>
+  <div class="pagina">
+    <div class="portal-topbar">
+      <div class="left">
+        <div class="mark">IÀC</div>
+        <div><strong>Introdução à Ciência do Direito</strong><span>Modo escuro • Progresso salvo no navegador</span></div>
+      </div>
+      <a class="back-link" href="../index.html">← Voltar ao Portal</a>
+    </div>
+
+
+    <header>
+      <span class="etiqueta">Guia de estudos</span>
+
+      <h1>Introdução à Ciência do Direito</h1>
+
+      <p>
+        Conteúdos, leituras obrigatórias, debates, calendário e critérios de
+        avaliação organizados a partir do syllabus da disciplina.
+      </p>
+    </header>
+
+    <main>
+
+      <div class="informacoes">
+        <div class="info">
+          <strong>Instituição</strong>
+          <span>Faculdade de Direito — UFRGS</span>
+        </div>
+
+        <div class="info">
+          <strong>Departamento</strong>
+          <span>Direito Público e Filosofia do Direito</span>
+        </div>
+
+        <div class="info">
+          <strong>Turma</strong>
+          <span>Noite</span>
+        </div>
+
+        <div class="info">
+          <strong>Professor</strong>
+          <span>Dr. Guilherme — nome parcialmente ilegível na imagem</span>
+        </div>
+      </div>
+
+      <div class="progresso">
+        <span id="textoProgresso">0% concluído</span>
+
+        <div class="barra">
+          <div class="barra-interna" id="barraInterna"></div>
+        </div>
+
+        <span id="contador">0 de 0 itens</span>
+
+        <button class="limpar" onclick="limparProgresso()">
+          Limpar progresso
+        </button>
+      </div>
+
+      <div class="aviso">
+        <strong>Como usar:</strong>
+        leia os textos na ordem do calendário, prepare os debates e marque os
+        itens concluídos. As referências e datas foram transcritas da imagem
+        fornecida; confirme no Moodle ou com o professor qualquer informação
+        que tenha sido atualizada.
+      </div>
+
+      <nav class="indice">
+        <h2>Índice</h2>
+
+        <ol>
+          <li><a href="#identificacao">Identificação</a></li>
+          <li><a href="#sumula">Súmula e objetivos</a></li>
+          <li><a href="#conteudos">Conteúdos fundamentais</a></li>
+          <li><a href="#juspositivismo">Juspositivismo e jusnaturalismo</a></li>
+          <li><a href="#hart">O conceito de Direito — Hart</a></li>
+          <li><a href="#debates">Debates e autores</a></li>
+          <li><a href="#bibliografia">Leituras obrigatórias</a></li>
+          <li><a href="#calendario">Calendário da disciplina</a></li>
+          <li><a href="#avaliacao">Avaliação</a></li>
+          <li><a href="#recuperacao">Recuperação</a></li>
+          <li><a href="#prioridades">Prioridades para estudar</a></li>
+          <li><a href="#checklist">Checklist final</a></li>
+        </ol>
+      </nav>
+
+      <section id="identificacao">
+        <div class="titulo-secao">
+          <small>Informações gerais</small>
+          <h2>Identificação da disciplina</h2>
+        </div>
+
+        <table>
+          <tbody>
+            <tr>
+              <th>Instituição</th>
+              <td>Universidade Federal do Rio Grande do Sul — UFRGS</td>
+            </tr>
+
+            <tr>
+              <th>Unidade</th>
+              <td>Faculdade de Direito</td>
+            </tr>
+
+            <tr>
+              <th>Departamento</th>
+              <td>Departamento de Direito Público e Filosofia do Direito</td>
+            </tr>
+
+            <tr>
+              <th>Disciplina</th>
+              <td>Introdução à Ciência do Direito</td>
+            </tr>
+
+            <tr>
+              <th>Professor</th>
+              <td>Dr. Guilherme — sobrenome não identificado com segurança na imagem</td>
+            </tr>
+
+            <tr>
+              <th>Turma</th>
+              <td>Noite</td>
+            </tr>
+
+            <tr>
+              <th>Semestre</th>
+              <td>Informação indicada no documento fotografado</td>
+            </tr>
+
+            <tr>
+              <th>Modalidade</th>
+              <td>Aulas expositivas e dialéticas</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sumula">
+        <div class="titulo-secao">
+          <small>Apresentação</small>
+          <h2>Súmula e objetivos</h2>
+        </div>
+
+        <div class="bloco destaque">
+          <h3>Súmula</h3>
+
+          <p>
+            A disciplina pretende discutir, analisar e introduzir os conceitos
+            centrais da Ciência do Direito, examinando também sua relação com a
+            Filosofia do Direito.
+          </p>
+
+          <p>
+            O curso aborda os fundamentos filosóficos da Ciência do Direito e
+            busca mostrar as questões relacionadas ao fundamento, à estrutura
+            e à aplicação do Direito.
+          </p>
+        </div>
+
+        <h3>Objetivos de aprendizagem</h3>
+
+        <ul class="checklist">
+          <li><input type="checkbox">Compreender os conceitos centrais da Ciência do Direito.</li>
+          <li><input type="checkbox">Relacionar Ciência do Direito e Filosofia do Direito.</li>
+          <li><input type="checkbox">Estudar os fundamentos filosóficos do Direito.</li>
+          <li><input type="checkbox">Analisar diferentes concepções sobre o Direito.</li>
+          <li><input type="checkbox">Compreender a estrutura do sistema jurídico.</li>
+          <li><input type="checkbox">Discutir a aplicação do Direito.</li>
+          <li><input type="checkbox">Comparar juspositivismo e jusnaturalismo.</li>
+          <li><input type="checkbox">Analisar as teorias de Hart, Kelsen, Dworkin, Finnis, Fuller, Raz, MacCormick e Waldron.</li>
+        </ul>
+      </section>
+
+      <section id="conteudos">
+        <div class="titulo-secao">
+          <small>Conteúdo programático</small>
+          <h2>Temas centrais do semestre</h2>
+        </div>
+
+        <div class="bloco">
+          <h3>1. Ciência do Direito</h3>
+
+          <ul class="checklist">
+            <li><input type="checkbox">Conceito de Ciência do Direito.</li>
+            <li><input type="checkbox">Relação entre Ciência do Direito e Filosofia do Direito.</li>
+            <li><input type="checkbox">Fundamentos filosóficos da Ciência do Direito.</li>
+            <li><input type="checkbox">Conceito, estrutura e aplicação do Direito.</li>
+            <li><input type="checkbox">Problemas fundamentais da teoria jurídica.</li>
+          </ul>
+        </div>
+
+        <div class="bloco">
+          <h3>2. Fundamento do Direito</h3>
+
+          <ul class="checklist">
+            <li><input type="checkbox">Fundamento moral do Direito.</li>
+            <li><input type="checkbox">Fundamento político do Direito.</li>
+            <li><input type="checkbox">Fundamento social do Direito.</li>
+            <li><input type="checkbox">Fundamento jurídico do Direito.</li>
+            <li><input type="checkbox">Relação entre validade, eficácia e legitimidade.</li>
+            <li><input type="checkbox">Relação entre Direito e justiça.</li>
+          </ul>
+        </div>
+
+        <div class="bloco">
+          <h3>3. Estrutura do Direito</h3>
+
+          <ul class="checklist">
+            <li><input type="checkbox">Normas jurídicas.</li>
+            <li><input type="checkbox">Regras e princípios.</li>
+            <li><input type="checkbox">Sistema jurídico.</li>
+            <li><input type="checkbox">Fontes do Direito.</li>
+            <li><input type="checkbox">Relação entre normas e instituições.</li>
+            <li><input type="checkbox">Unidade e coerência do ordenamento jurídico.</li>
+          </ul>
+        </div>
+
+        <div class="bloco">
+          <h3>4. Aplicação do Direito</h3>
+
+          <ul class="checklist">
+            <li><input type="checkbox">Interpretação jurídica.</li>
+            <li><input type="checkbox">Aplicação das normas.</li>
+            <li><input type="checkbox">Discricionariedade.</li>
+            <li><input type="checkbox">Decisão judicial.</li>
+            <li><input type="checkbox">Argumentação jurídica.</li>
+            <li><input type="checkbox">Relação entre Direito e moral na aplicação.</li>
+            <li><input type="checkbox">Relação entre Direito e política.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="juspositivismo">
+        <div class="titulo-secao">
+          <small>Primeiro eixo</small>
+          <h2>Juspositivismo e jusnaturalismo</h2>
+        </div>
+
+        <div class="colunas">
+          <div class="bloco">
+            <h3>Juspositivismo</h3>
+
+            <ul class="checklist">
+              <li><input type="checkbox">Conceito de juspositivismo.</li>
+              <li><input type="checkbox">Direito como fenômeno institucional e social.</li>
+              <li><input type="checkbox">Separação entre Direito e moral.</li>
+              <li><input type="checkbox">Validade jurídica.</li>
+              <li><input type="checkbox">Fontes sociais do Direito.</li>
+              <li><input type="checkbox">Sistema de regras.</li>
+              <li><input type="checkbox">Limites do positivismo jurídico.</li>
+            </ul>
+          </div>
+
+          <div class="bloco">
+            <h3>Jusnaturalismo</h3>
+
+            <ul class="checklist">
+              <li><input type="checkbox">Conceito de jusnaturalismo.</li>
+              <li><input type="checkbox">Direito natural.</li>
+              <li><input type="checkbox">Relação entre Direito e moral.</li>
+              <li><input type="checkbox">Justiça como critério de avaliação do Direito.</li>
+              <li><input type="checkbox">Direitos naturais.</li>
+              <li><input type="checkbox">Limites do jusnaturalismo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Questões para comparar as duas correntes</h3>
+
+        <ul class="checklist">
+          <li><input type="checkbox">O que torna uma norma juridicamente válida?</li>
+          <li><input type="checkbox">Existe Direito injusto?</li>
+          <li><input type="checkbox">Direito e moral podem ser separados?</li>
+          <li><input type="checkbox">A justiça é requisito de validade jurídica?</li>
+          <li><input type="checkbox">Como avaliar uma lei extremamente injusta?</li>
+          <li><input type="checkbox">Qual é o papel dos valores na interpretação jurídica?</li>
+        </ul>
+
+        <div class="aviso">
+          <strong>Para a prova:</strong>
+          prepare uma resposta comparando juspositivismo e jusnaturalismo,
+          apresentando o conceito de cada corrente, suas diferenças e os
+          principais problemas levantados por elas.
+        </div>
+      </section>
+
+      <section id="hart">
+        <div class="titulo-secao">
+          <small>Leitura principal do início do semestre</small>
+          <h2>O Conceito de Direito — Herbert Hart</h2>
+        </div>
+
+        <div class="bloco">
+          <h3>Temas para estudar nos capítulos indicados</h3>
+
+          <ul class="checklist">
+            <li><input type="checkbox">Conceito de Direito.</li>
+            <li><input type="checkbox">Direito, coerção e autoridade.</li>
+            <li><input type="checkbox">Direito como união de regras.</li>
+            <li><input type="checkbox">Regras primárias.</li>
+            <li><input type="checkbox">Regras secundárias.</li>
+            <li><input type="checkbox">Regra de reconhecimento.</li>
+            <li><input type="checkbox">Regras de alteração.</li>
+            <li><input type="checkbox">Regras de julgamento.</li>
+            <li><input type="checkbox">Validade das normas.</li>
+            <li><input type="checkbox">Ponto de vista interno e ponto de vista externo.</li>
+            <li><input type="checkbox">Textura aberta do Direito.</li>
+            <li><input type="checkbox">Discricionariedade judicial.</li>
+            <li><input type="checkbox">Relação entre Direito e moral.</li>
+          </ul>
+        </div>
+
+        <h3>Capítulos indicados no calendário</h3>
+
+        <ul class="checklist">
+          <li><input type="checkbox">Capítulo V — O conceito de Direito.</li>
+          <li><input type="checkbox">Capítulo VI — O conceito de Direito.</li>
+          <li><input type="checkbox">Capítulo VII — O conceito de Direito.</li>
+          <li><input type="checkbox">Capítulo VIII — O conceito de Direito.</li>
+        </ul>
+
+        <div class="bibliografia">
+          <h3>Leitura</h3>
+
+          <p>
+            HART, Herbert. <em>O Conceito de Direito</em>.
+          </p>
+
+          <p class="nota">
+            A edição específica não aparece na imagem. Confira a edição
+            utilizada pelo professor.
+          </p>
+        </div>
+      </section>
+
+      <section id="debates">
+        <div class="titulo-secao">
+          <small>Segundo eixo</small>
+          <h2>Debates e autores contemporâneos</h2>
+        </div>
+
+        <p>
+          Os debates do semestre colocam a teoria de Hart em diálogo com
+          diferentes autores e perspectivas sobre Direito, moral, interpretação,
