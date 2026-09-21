@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia de Estudos — História do Direito</title>
+  <style>
+    :root {
+      --azul: #17324d;
+      --azul-claro: #eaf2f8;
+      --dourado: #b88635;
+      --creme: #fbf8f1;
+      --texto: #263238;
+      --cinza: #66727a;
+      --borda: #d9dfe3;
+      --verde: #2d7d5a;
+      --sombra: 0 8px 24px rgba(23, 50, 77, .09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: #eef1f3;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    .pagina {
+      max-width: 1120px;
+      margin: 0 auto;
+      background: white;
+      min-height: 100vh;
+      box-shadow: var(--sombra);
+    }
+
+    header {
+      background:
+        linear-gradient(135deg, rgba(23, 50, 77, .97), rgba(32, 72, 103, .94)),
+        repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(255,255,255,.03) 13px);
+      color: white;
+      padding: 64px 72px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "§";
+      position: absolute;
+      right: 68px;
+      top: 18px;
+      color: rgba(255,255,255,.12);
+      font-size: 190px;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font: 700 12px/1.2 Arial, sans-serif;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--azul);
+      line-height: 1.2;
+      margin-top: 0;
+    }
+
+    header h1 {
+      color: white;
+      max-width: 760px;
+      font-size: clamp(34px, 5vw, 58px);
+      margin: 0 0 16px;
+      letter-spacing: -.8px;
+    }
+
+    header p {
+      max-width: 730px;
+      margin: 0;
+      font-size: 19px;
+      color: #e5edf3;
+    }
+
+    main {
+      padding: 46px 72px 70px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: -78px 0 38px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .meta-card {
+      background: white;
+      border: 1px solid var(--borda);
+      border-top: 4px solid var(--dourado);
+      border-radius: 8px;
+      padding: 18px 20px;
+      box-shadow: var(--sombra);
+    }
+
+    .meta-card strong {
+      display: block;
+      color: var(--azul);
+      font: 700 12px Arial, sans-serif;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .meta-card span {
+      font-size: 16px;
+    }
+
+    .aviso {
+      background: var(--creme);
+      border-left: 5px solid var(--dourado);
+      padding: 18px 22px;
+      margin: 28px 0 38px;
+      border-radius: 0 7px 7px 0;
+    }
+
+    .aviso strong {
+      color: var(--azul);
+    }
+
+    .indice {
+      background: var(--azul-claro);
+      border: 1px solid #cbdce8;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 46px;
+    }
+
+    .indice h2 {
+      margin-bottom: 12px;
+      font-size: 23px;
+    }
+
+    .indice ol {
+      columns: 2;
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .indice li {
+      margin: 5px 0;
+      break-inside: avoid;
+    }
+
+    a {
+      color: #185985;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin: 0 0 48px;
+      scroll-margin-top: 20px;
+    }
+
+    .secao-titulo {
+      border-bottom: 2px solid var(--dourado);
+      padding-bottom: 11px;
+      margin-bottom: 22px;
+    }
+
+    .secao-titulo .numero {
+      display: block;
+      color: var(--dourado);
+      font: 700 13px Arial, sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .secao-titulo h2 {
+      font-size: 32px;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-size: 23px;
+      margin: 30px 0 12px;
+    }
+
+    h4 {
+      font-size: 18px;
+      margin: 21px 0 8px;
+    }
+
+    ul, ol {
+      padding-left: 27px;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .lista-estudo {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .lista-estudo li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      border-bottom: 1px dotted #dfe3e5;
+      padding: 6px 0;
+    }
+
+    .lista-estudo input {
+      margin-top: 7px;
+      accent-color: var(--verde);
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+    }
+
+    .bloco {
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      padding: 20px 23px;
+      margin: 18px 0;
+      background: #fff;
+    }
+
+    .bloco h3:first-child,
+    .bloco h4:first-child {
+      margin-top: 0;
+    }
+
+    .colunas {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .bibliografia {
+      background: #f7fafc;
+      border-left: 4px solid var(--azul);
+      padding: 18px 22px;
+      border-radius: 0 7px 7px 0;
+      margin-top: 20px;
+    }
+
+    .bibliografia h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .link-material {
+      word-break: break-word;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 25px;
+      font-size: 15px;
+    }
+
+    th {
+      background: var(--azul);
+      color: white;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: .3px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid var(--borda);
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafb;
+    }
+
+    .prioridade {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px 25px;
+      list-style: none;
+      padding: 0;
+      counter-reset: prioridade;
+    }
+
+    .prioridade li {
+      counter-increment: prioridade;
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      margin: 0;
+    }
+
+    .prioridade li::before {
+      content: counter(prioridade);
+      background: var(--dourado);
+      color: white;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 26px;
+      font: 700 13px Arial, sans-serif;
+      margin-top: 2px;
+    }
+
+    .comparacao td:first-child {
+      background: #fff8ea;
+    }
+
+    .comparacao td:last-child {
+      background: #edf8f1;
+    }
+
+    .rodape {
+      background: var(--azul);
+      color: #e6eef3;
+      padding: 28px 72px;
+      font-size: 14px;
+    }
+
+    .rodape strong {
+      color: white;
+    }
+
+    .marcador {
+      color: var(--verde);
+      font-weight: bold;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding: 42px 25px 100px;
+      }
+
+      header::after {
+        right: 18px;
+        top: 22px;
+        font-size: 120px;
+      }
+
+      main {
+        padding: 30px 22px 50px;
+      }
+
+      .meta {
+        grid-template-columns: 1fr;
+        margin: -70px 0 30px;
+      }
+
+      .indice ol {
+        columns: 1;
+      }
+
+      .colunas,
+      .prioridade {
+        grid-template-columns: 1fr;
+      }
+
+      .secao-titulo h2 {
+        font-size: 27px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .rodape {
+        padding: 25px 22px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .pagina {
+        box-shadow: none;
+        max-width: none;
+      }
+
+      header {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .bloco, .bibliografia, .aviso {
+        break-inside: avoid;
+      }
+
+      a {
+        color: black;
+      }
+    }
+  </style>
+
+<style id="portal-estudos-integracao">
+  .portal-estudos-voltar{position:fixed;right:18px;bottom:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:999px;background:#102c43;color:#fff!important;text-decoration:none!important;font:700 13px/1.2 Arial,sans-serif;box-shadow:0 9px 24px rgba(16,44,67,.24);border:1px solid rgba(255,255,255,.18)}
+  .portal-estudos-voltar:hover{transform:translateY(-1px);background:#173f5f;text-decoration:none!important}
+  @media(max-width:620px){.portal-estudos-voltar{right:12px;bottom:12px;padding:10px 13px;font-size:12px}}
+  @media print{.portal-estudos-voltar{display:none!important}}
+</style>
+<style id="notion-dark-override">
+  :root{--azul:#f2f2f2;--azul-2:#dfdfdf;--azul-claro:#202020;--dourado:#9d9d9d;--creme:#1f1f1f;--texto:#ededed;--cinza:#a4a4a4;--borda:#323232;--verde:#d9d9d9;--sombra:0 20px 40px rgba(0,0,0,.22)}
+  html{scroll-behavior:smooth}
+  body{background:#191919!important;color:var(--texto)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;line-height:1.7}
+  .pagina{max-width:1160px!important;background:#191919!important;box-shadow:none!important}
+  .portal-topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 24px;border-bottom:1px solid var(--borda);background:#171717;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+  .portal-topbar .left{display:flex;align-items:center;gap:10px;min-width:0}
+  .portal-topbar .mark{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:#222;border:1px solid #333;color:#f3f3f3;font-size:12px;font-weight:800;letter-spacing:.06em}
+  .portal-topbar strong{display:block;font-size:14px;letter-spacing:-.01em}
+  .portal-topbar span{display:block;color:var(--cinza);font-size:12px}
+  .portal-topbar .back-link{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid var(--borda);background:#202020;color:#f0f0f0;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap}
+  header{background:#1f1f1f!important;border:1px solid var(--borda);border-radius:20px;padding:42px 44px 36px!important;margin:22px 24px 0;overflow:hidden}
+  header::after{display:none!important}
+  .etiqueta{background:#222!important;border-color:#353535!important;color:#bdbdbd!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-weight:700!important;letter-spacing:.08em!important;padding:6px 10px!important}
+  header h1{font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;color:#f4f4f4!important;font-size:clamp(30px,4vw,46px)!important;line-height:1.1!important;letter-spacing:-.03em}
+  header p{color:#d0d0d0!important;font-size:15px!important;max-width:860px!important}
+  main{padding:24px 24px 50px!important}
+  .informacoes,.meta{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important;gap:12px!important;margin:-36px 0 28px!important;position:relative;z-index:2}
+  .info,.meta-card{background:#202020!important;border:1px solid var(--borda)!important;border-top:none!important;border-radius:14px!important;box-shadow:none!important;padding:16px 16px!important}
+  .info strong,.meta-card strong{color:#8f8f8f!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;margin-bottom:6px!important}
+  .info span,.meta-card span,.meta-card div:last-child{color:#f0f0f0!important;font-size:14px!important}
+  .progresso{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 24px;padding:16px 18px;background:#202020;border:1px solid var(--borda);border-radius:14px}
+  .progresso p{margin:0;color:#d2d2d2;font-size:14px}
+  .barra{flex:1 1 240px;height:8px;background:#2a2a2a;border-radius:999px;overflow:hidden}
+  .barra-interna{height:100%!important;background:#ececec!important;border-radius:inherit!important}
+  .botao-limpar,.limpar{border:1px solid var(--borda)!important;background:#242424!important;color:#ededed!important;border-radius:10px!important;padding:10px 12px!important;font-weight:700!important;cursor:pointer}
+  .aviso{background:#1f1f1f!important;border:1px solid var(--borda)!important;border-left:3px solid #8e8e8e!important;color:#d8d8d8!important;border-radius:14px!important;padding:18px 18px!important;margin:20px 0 28px!important}
+  .aviso strong{color:#f2f2f2!important}
+  .indice{background:#202020!important;border:1px solid var(--borda)!important;border-radius:16px!important;padding:22px 22px!important;margin-bottom:28px!important}
+  .indice h2{color:#f2f2f2!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:20px!important;margin:0 0 12px!important}
+  .indice ol{columns:2;gap:22px}
+  .indice a{color:#d7d7d7!important;text-decoration:none}
+  .indice a:hover{text-decoration:underline}
+  section{margin-bottom:38px!important}
+  .titulo-secao,.secao-titulo{border-bottom:1px solid var(--borda)!important;padding-bottom:12px!important;margin-bottom:18px!important;display:flex;flex-direction:column;gap:4px}
+  .titulo-secao small,.secao-titulo small,.numero{color:#9a9a9a!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;font-weight:700!important}
+  .titulo-secao h2,.secao-titulo h2{color:#f2f2f2!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:28px!important;line-height:1.2!important;margin:0!important;letter-spacing:-.03em}
+  h3,h4{color:#ededed!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;letter-spacing:-.02em}
+  h3{font-size:21px!important;margin:24px 0 10px!important}
+  h4{font-size:17px!important;margin:18px 0 8px!important}
+  p,li,td,th,span,div{word-break:normal;overflow-wrap:anywhere}
+  p{color:#d2d2d2!important}
+  ul,ol{padding-left:24px}
+  li{color:#d8d8d8!important}
+  .bloco,.bloco-destaque,.destaque,.bibliografia,.link-material{background:#202020!important;border:1px solid var(--borda)!important;border-radius:14px!important;padding:18px 18px!important;box-shadow:none!important}
+  .bibliografia{border-left:3px solid #8d8d8d!important;background:#1f1f1f!important}
+  .bibliografia h3{margin-top:0!important}
+  .nota{color:#a5a5a5!important}
+  .termo{color:#f1f1f1!important}
+  .checklist{list-style:none;padding-left:0}
+  .checklist li,.lista-estudo li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #2f2f2f!important}
+  .checklist li:last-child,.lista-estudo li:last-child{border-bottom:none!important}
+  .checklist input{width:17px;height:17px;margin-top:5px;accent-color:#e6e6e6}
+  table{width:100%;border-collapse:collapse;background:#202020;border:1px solid var(--borda)!important;border-radius:14px!important;overflow:hidden}
+  th{background:#232323!important;color:#f3f3f3!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:12px!important;letter-spacing:.04em;text-transform:uppercase}
+  td,th{border:1px solid var(--borda)!important;padding:11px 12px!important;color:#d7d7d7!important}
+  tr:nth-child(even) td{background:#1d1d1d!important}
+  .prioridades,.colunas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px}
+  .prioridades li::before{background:#333!important;color:#fff!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important}
+  a{color:#f0f0f0!important}
+  a:hover{text-decoration:underline}
+  footer{background:#171717!important;border-top:1px solid var(--borda)!important;color:#adadad!important;padding:22px 24px!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important}
+  footer strong{color:#f2f2f2!important}
+  .portal-estudos-voltar{background:#efefef!important;color:#151515!important;border:1px solid #efefef!important;box-shadow:0 14px 28px rgba(0,0,0,.25)!important;padding:11px 15px!important;font:700 13px/1.2 Inter,ui-sans-serif,system-ui,sans-serif!important}
+  .portal-estudos-voltar:hover{background:#ffffff!important;color:#111!important;transform:translateY(-1px)}
+  .link-material{display:inline-flex!important;align-items:center;gap:8px;padding:10px 12px!important;text-decoration:none!important}
+  @media (max-width:850px){header{margin:16px 16px 0;padding:30px 22px!important}main{padding:20px 16px 42px!important}.portal-topbar{padding:14px 16px}.informacoes,.meta{grid-template-columns:1fr 1fr!important;margin-top:-22px!important}.indice ol{columns:1}.prioridades,.colunas{grid-template-columns:1fr!important}footer{padding:18px 16px!important}}
+  @media (max-width:560px){.informacoes,.meta{grid-template-columns:1fr!important}.portal-topbar{flex-direction:column;align-items:flex-start}.portal-topbar .back-link{width:100%;justify-content:center}}
+  @media print{body{background:#fff!important;color:#000!important}.portal-topbar,.portal-estudos-voltar{display:none!important}.pagina{background:#fff!important}header,.bloco,.bibliografia,.aviso,.indice,.info,.meta-card{border-color:#bbb!important;background:#fff!important;color:#000!important;box-shadow:none!important}}
+</style>
+  <link rel="stylesheet" href="../assets/guide-enhancements.css">
+</head>
+
+<body>
+  <div class="pagina">
+    <div class="portal-topbar">
+      <div class="left">
+        <div class="mark">HDD</div>
+        <div><strong>História do Direito</strong><span>Modo escuro • Progresso salvo no navegador</span></div>
+      </div>
+      <a class="back-link" href="../index.html">← Voltar ao Portal</a>
+    </div>
+
+    <header>
+      <span class="etiqueta">Guia completo de estudos</span>
+      <h1>História do Direito</h1>
+      <p>
+        Conteúdos organizados, leituras indicadas e materiais complementares
+        conforme o plano de aulas da disciplina.
+      </p>
+    </header>
+
+    <main>
+      <div class="meta">
+        <div class="meta-card">
+          <strong>Disciplina</strong>
+          <span>História do Direito</span>
+        </div>
+        <div class="meta-card">
+          <strong>Período</strong>
+          <span>2026/2</span>
+        </div>
+        <div class="meta-card">
+          <strong>Leitura principal</strong>
+          <span>José Reinaldo de Lima Lopes</span>
+        </div>
+      </div>
+
+      <div class="aviso">
+        <strong>Como usar este documento:</strong>
+        estude os tópicos em ordem cronológica e marque cada item concluído.
+        A avaliação abrange todos os conteúdos do semestre, com questões
+        dissertativas e/ou objetivas.
+      </div>
+
+      <nav class="indice">
+        <h2>Índice</h2>
+        <ol>
+          <li><a href="#introducao">Introdução à História do Direito</a></li>
+          <li><a href="#antiguidade">Direitos Primitivos e Antiguidade</a></li>
+          <li><a href="#roma-justiniano">Direito Romano e Justiniano</a></li>
+          <li><a href="#idade-media">Direito na Idade Média</a></li>
+          <li><a href="#moderno">Direito Moderno</a></li>
+          <li><a href="#brasil-colonial">Direito Brasileiro Colonial</a></li>
+          <li><a href="#imperio">Direito Brasileiro Imperial</a></li>
+          <li><a href="#republica">Primeira República</a></li>
+          <li><a href="#codigo-2002">Código Civil de 2002</a></li>
+          <li><a href="#bibliografia-geral">Bibliografia geral</a></li>
+          <li><a href="#cronograma">Conteúdos por semanas</a></li>
+          <li><a href="#revisao">Revisão para a prova</a></li>
+        </ol>
+      </nav>
+
+      <section id="introducao">
+        <div class="secao-titulo">
+          <span class="numero">Parte 1</span>
+          <h2>Introdução à História do Direito</h2>
+        </div>
+
+        <h3>História do Direito</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Conceito de História do Direito.</li>
+          <li><input type="checkbox">Método da História do Direito.</li>
+          <li><input type="checkbox">Função da História do Direito.</li>
+          <li><input type="checkbox">Importância do contexto histórico para compreender as normas.</li>
+          <li><input type="checkbox">Relação entre Direito, política, economia, sociedade e cultura.</li>
+          <li><input type="checkbox">Componentes histórico-formativos do Direito.</li>
+          <li><input type="checkbox">Formação histórica do Direito brasileiro.</li>
+          <li><input type="checkbox">Tradição romano-germânica.</li>
+          <li><input type="checkbox">Relação entre identidade e universalidade na formação jurídica.</li>
+        </ul>
+
+        <h3>Conceitos fundamentais</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Direito e norma jurídica.</li>
+          <li><input type="checkbox">Lei e costume.</li>
+          <li><input type="checkbox">Justiça, Estado e poder.</li>
+          <li><input type="checkbox">Instituição e jurisdição.</li>
+          <li><input type="checkbox">Ordenamento jurídico.</li>
+          <li><input type="checkbox">Direito público e Direito privado.</li>
+          <li><input type="checkbox">Codificação e Constituição.</li>
+          <li><input type="checkbox">Doutrina e jurisprudência.</li>
+        </ul>
+
+        <h3>Fontes do Direito na História</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Fontes escritas e não escritas.</li>
+          <li><input type="checkbox">Costumes, leis e códigos.</li>
+          <li><input type="checkbox">Constituições e decisões judiciais.</li>
+          <li><input type="checkbox">Textos religiosos e tratados.</li>
+          <li><input type="checkbox">Documentos históricos.</li>
+          <li><input type="checkbox">Fontes de produção do Direito.</li>
+          <li><input type="checkbox">Fontes de conhecimento histórico.</li>
+          <li><input type="checkbox">Fontes formais e materiais.</li>
+        </ul>
+
+        <div class="bibliografia">
+          <h3>Leituras e materiais</h3>
+          <p>
+            <strong>LOPES, José Reinaldo de Lima.</strong>
+            <em>O Direito na História: lições introdutórias</em>.
+            São Paulo: Atlas. <strong>Capítulo 1.</strong>
+          </p>
+          <p><strong>Apostila de Conceitos Fundamentais</strong>, disponibilizada por e-mail ou pelo SAV.</p>
+          <ul>
+            <li><a class="link-material" href="https://www.youtube.com/watch?v=0EPd5H-eOCA" target="_blank">Vídeo sobre fontes do Direito na História</a></li>
+            <li><a class="link-material" href="https://www.youtube.com/watch?v=cppqD3o1viY" target="_blank">Vídeo sobre introdução, método, função e componentes históricos do Direito</a></li>
+            <li><a class="link-material" href="https://www.youtube.com/watch?v=C2p42GAS-nU" target="_blank">Material complementar sobre identidade e universalidade</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="antiguidade">
+        <div class="secao-titulo">
+          <span class="numero">Parte 2</span>
+          <h2>Direitos Primitivos e Direitos da Antiguidade</h2>
+        </div>
+
+        <div class="bloco">
+          <h3>Direitos tradicionais dos povos sem escrita</h3>
+          <ul class="lista-estudo">
+            <li><input type="checkbox">Tradição oral.</li>
+            <li><input type="checkbox">Costumes como forma de organização jurídica.</li>
+            <li><input type="checkbox">Autoridade dos chefes, anciãos e líderes religiosos.</li>
+            <li><input type="checkbox">Relação entre Direito, religião e moral.</li>
+            <li><input type="checkbox">Responsabilidade coletiva.</li>
+            <li><input type="checkbox">Sanções comunitárias.</li>
+            <li><input type="checkbox">Vingança, compensação e resolução de conflitos.</li>
+            <li><input type="checkbox">Ausência de separação entre Direito, religião e política.</li>
+          </ul>
+        </div>
+
+        <div class="bloco">
+          <h3>Direito do Egito Antigo</h3>
+          <ul class="lista-estudo">
+            <li><input type="checkbox">Organização política e social egípcia.</li>
+            <li><input type="checkbox">Poder do faraó.</li>
+            <li><input type="checkbox">Relação entre religião e Direito.</li>
+            <li><input type="checkbox">Ideia de justiça e ordem.</li>
+            <li><input type="checkbox">Administração da justiça.</li>
+            <li><input type="checkbox">Papel dos escribas.</li>
+            <li><input type="checkbox">Propriedade, família e sucessões.</li>
+            <li><input type="checkbox">Importância dos registros escritos.</li>
+          </ul>
+        </div>
+
+        <div class="bloco">
+          <h3>Direitos dos povos mesopotâmicos</h3>
+          <ul class="lista-estudo">
+            <li><input type="checkbox">Organização das cidades-Estado.</li>
+            <li><input type="checkbox">Relação entre poder político e religião.</li>
+            <li><input type="checkbox">Leis escritas.</li>
+            <li><input type="checkbox">Código de Hamurabi.</li>
+            <li><input type="checkbox">Propriedade, família e casamento.</li>
+            <li><input type="checkbox">Escravidão.</li>
+            <li><input type="checkbox">Crimes, penas e responsabilidade.</li>
+            <li><input type="checkbox">Reparação e lei de talião.</li>
+            <li><input type="checkbox">Proporcionalidade das penas.</li>
+            <li><input type="checkbox">Desigualdade jurídica conforme a posição social.</li>
+          </ul>
+        </div>
+
+        <div class="bloco">
+          <h3>Direito hebraico</h3>
+          <ul class="lista-estudo">
+            <li><input type="checkbox">Relação entre Direito e religião.</li>
+            <li><input type="checkbox">Aliança entre Deus e o povo.</li>
+            <li><input type="checkbox">Lei religiosa.</li>
+            <li><input type="checkbox">Normas morais, civis e religiosas.</li>
+            <li><input type="checkbox">Família, casamento e propriedade.</li>
+            <li><input type="checkbox">Crimes e penas.</li>
+            <li><input type="checkbox">Proteção de determinados grupos sociais.</li>
+            <li><input type="checkbox">Influência da tradição hebraica no Direito ocidental.</li>
+          </ul>
+        </div>
+
+        <div class="bloco">
+          <h3>Direito grego, especialmente o Direito ateniense</h3>
+          <ul class="lista-estudo">
+            <li><input type="checkbox">Organização da pólis.</li>
+            <li><input type="checkbox">Cidadania e democracia ateniense.</li>
+            <li><input type="checkbox">Participação política.</li>
+            <li><input type="checkbox">Exclusão de mulheres, escravizados e estrangeiros.</li>
+            <li><input type="checkbox">Leis de Drácon.</li>
+            <li><input type="checkbox">Reformas de Sólon.</li>
+            <li><input type="checkbox">Reformas de Clístenes.</li>
+            <li><input type="checkbox">Tribunais populares.</li>
+            <li><input type="checkbox">Relação entre política, filosofia e Direito.</li>
+            <li><input type="checkbox">Retórica e argumentação.</li>
+            <li><input type="checkbox">Pensamento de Sócrates, Platão e Aristóteles.</li>
+            <li><input type="checkbox">Justiça natural e justiça legal.</li>
+            <li><input type="checkbox">Relação entre lei e justiça.</li>
+          </ul>
+        </div>
+
+        <div class="bibliografia">
+          <h3>Leitura e materiais da Antiguidade</h3>
+          <p>
+            <strong>LOPES, José Reinaldo de Lima.</strong>
+            <em>O Direito na História: lições introdutórias</em>.
+            <strong>Capítulo 2.</strong>
+          </p>
+          <ul>
+            <li><a class="link-material" href="https://youtu.be/o6B-ca_Tyuws" target="_blank">Vídeo sobre direitos antigos hebraico e grego/ateniense</a></li>
+            <li><a class="link-material" href="https://youtu.be/5Q-LQoYYffo" target="_blank">Vídeo sobre Direito Antigo: Roma</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="roma-justiniano">
+        <div class="secao-titulo">
+          <span class="numero">Parte 3</span>
+          <h2>Direito Romano e a obra de Justiniano</h2>
+        </div>
+
+        <h3>Formação e períodos de Roma</h3>
+
+        <div class="colunas">
+          <div class="bloco">
+            <h4>Período da Realeza</h4>
+            <ul class="lista-estudo">
+              <li><input type="checkbox">Formação de Roma.</li>
+              <li><input type="checkbox">Organização social.</li>
+              <li><input type="checkbox">Poder do rei.</li>
+              <li><input type="checkbox">Influência da religião e dos costumes.</li>
+              <li><input type="checkbox">Estrutura familiar e poder patriarcal.</li>
+            </ul>
+          </div>
+
+          <div class="bloco">
+            <h4>Período da República</h4>
+            <ul class="lista-estudo">
+              <li><input type="checkbox">Conflito entre patrícios e plebeus.</li>
+              <li><input type="checkbox">Lei das XII Tábuas.</li>
+              <li><input type="checkbox">Magistraturas, Senado e assembleias.</li>
+              <li><input type="checkbox">Pretores.</li>
+              <li><input type="checkbox">Desenvolvimento do Direito escrito.</li>
+              <li><input type="checkbox">Expansão territorial e seus efeitos jurídicos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bloco">
+          <h4>Período do Império</h4>
+          <ul class="lista-estudo">
+            <li><input type="checkbox">Centralização política.</li>
+            <li><input type="checkbox">Constituições imperiais.</li>
+            <li><input type="checkbox">Burocracia.</li>
+            <li><input type="checkbox">Atuação dos juristas.</li>
+            <li><input type="checkbox">Período clássico do Direito Romano.</li>
+            <li><input type="checkbox">Transformações sociais e políticas.</li>
+            <li><input type="checkbox">Cristianização do Império.</li>
+            <li><input type="checkbox">Direito Romano ocidental e oriental.</li>
+          </ul>
+        </div>
+
+        <h3>Fontes do Direito Romano</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Costumes.</li>
+          <li><input type="checkbox">Leis.</li>
+          <li><input type="checkbox">Plebiscitos.</li>
+          <li><input type="checkbox">Senatusconsultos.</li>
+          <li><input type="checkbox">Editos dos magistrados.</li>
+          <li><input type="checkbox">Constituições imperiais.</li>
+          <li><input type="checkbox">Jurisprudência dos juristas.</li>
+          <li><input type="checkbox">Doutrina e interpretação jurídica.</li>
+        </ul>
+
+        <h3>Principais conceitos e institutos</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox"><em>Ius civile</em>.</li>
+          <li><input type="checkbox"><em>Ius gentium</em>.</li>
+          <li><input type="checkbox"><em>Ius naturale</em>.</li>
+          <li><input type="checkbox">Direito público e Direito privado.</li>
+          <li><input type="checkbox">Pessoas e família.</li>
+          <li><input type="checkbox">Pátrio poder.</li>
+          <li><input type="checkbox">Propriedade, posse e coisas.</li>
+          <li><input type="checkbox">Obrigações e contratos.</li>
+          <li><input type="checkbox">Responsabilidade.</li>
+          <li><input type="checkbox">Sucessões.</li>
+          <li><input type="checkbox">Ações e processo civil romano.</li>
+        </ul>
+
+        <h3>Direito Romano oriental e Justiniano</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Direito Romano oriental.</li>
+          <li><input type="checkbox">Imperador Justiniano.</li>
+          <li><input type="checkbox">Compilação e sistematização do Direito Romano.</li>
+          <li><input type="checkbox"><em>Corpus Juris Civilis</em>.</li>
+          <li><input type="checkbox">Código.</li>
+          <li><input type="checkbox">Digesto.</li>
+          <li><input type="checkbox">Institutas.</li>
+          <li><input type="checkbox">Novelas.</li>
+          <li><input type="checkbox">Preservação dos textos jurídicos romanos.</li>
+          <li><input type="checkbox">Influência de Justiniano na Europa e na tradição romano-germânica.</li>
+        </ul>
+
+        <div class="aviso">
+          <strong>Ponto central:</strong>
+          saiba explicar como o Direito Romano foi organizado, preservado e
+          posteriormente utilizado na formação do Direito europeu e brasileiro.
+        </div>
+      </section>
+
+      <section id="idade-media">
+        <div class="secao-titulo">
+          <span class="numero">Parte 4</span>
+          <h2>Direito na Idade Média</h2>
+        </div>
+
+        <h3>Características gerais</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Fragmentação política.</li>
+          <li><input type="checkbox">Feudalismo.</li>
+          <li><input type="checkbox">Poder da Igreja.</li>
+          <li><input type="checkbox">Pluralidade de ordens jurídicas.</li>
+          <li><input type="checkbox">Predominância dos costumes.</li>
+          <li><input type="checkbox">Relações de dependência pessoal.</li>
+          <li><input type="checkbox">Corporação e comunidades locais.</li>
+          <li><input type="checkbox">Convivência entre Direito Romano, germânico, canônico e costumes locais.</li>
+        </ul>
+
+        <h3>Universal e particular</h3>
+        <div class="colunas">
+          <div class="bloco">
+            <h4>Elementos universais</h4>
+            <ul class="lista-estudo">
+              <li><input type="checkbox">Império.</li>
+              <li><input type="checkbox">Igreja.</li>
+              <li><input type="checkbox">Universidade.</li>
+              <li><input type="checkbox">Cristianismo.</li>
+              <li><input type="checkbox">Direito Romano.</li>
+              <li><input type="checkbox">Direito Canônico.</li>
+            </ul>
+          </div>
+          <div class="bloco">
+            <h4>Elementos particulares</h4>
+            <ul class="lista-estudo">
+              <li><input type="checkbox">Reinos.</li>
+              <li><input type="checkbox">Feudos.</li>
+              <li><input type="checkbox">Cidades.</li>
+              <li><input type="checkbox">Corporações.</li>
+              <li><input type="checkbox">Costumes locais.</li>
+              <li><input type="checkbox">Poderes senhoriais.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Direitos germânicos</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Costumes dos povos germânicos.</li>
+          <li><input type="checkbox">Oralidade.</li>
+          <li><input type="checkbox">Assembleias.</li>
+          <li><input type="checkbox">Organização comunitária.</li>
+          <li><input type="checkbox">Responsabilidade coletiva.</li>
+          <li><input type="checkbox">Vingança, composição e compensação.</li>
+          <li><input type="checkbox">Penas e ordálias.</li>
+          <li><input type="checkbox">Relação entre posição social e consequências jurídicas.</li>
+        </ul>
+
+        <h3>Direito Canônico</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Conceito de Direito Canônico.</li>
+          <li><input type="checkbox">Organização jurídica da Igreja.</li>
+          <li><input type="checkbox">Fontes do Direito Canônico.</li>
+          <li><input type="checkbox">Decretos e coleções canônicas.</li>
+          <li><input type="checkbox">Jurisdição eclesiástica.</li>
+          <li><input type="checkbox">Casamento, família e moral religiosa.</li>
+          <li><input type="checkbox">Relação entre Igreja e poder político.</li>
+          <li><input type="checkbox">Influência no Direito ocidental.</li>
+        </ul>
+
+        <h3>Recepção do Direito Romano</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Conceito de recepção do Direito Romano.</li>
+          <li><input type="checkbox">Redescoberta dos textos romanos.</li>
+          <li><input type="checkbox">Estudo do <em>Corpus Juris Civilis</em>.</li>
+          <li><input type="checkbox">Influência do Direito Romano na Europa.</li>
+          <li><input type="checkbox">Adaptação às sociedades medievais.</li>
+          <li><input type="checkbox">Formação do Direito comum europeu.</li>
+          <li><input type="checkbox">Relação com os costumes locais.</li>
+          <li><input type="checkbox">Formação do sistema romano-germânico.</li>
+        </ul>
+
+        <h3>Escola de Bolonha</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Fundação e importância da Universidade de Bolonha.</li>
+          <li><input type="checkbox">Estudo do <em>Corpus Juris Civilis</em>.</li>
+          <li><input type="checkbox">Glosadores e glosas.</li>
+          <li><input type="checkbox">Comentários aos textos romanos.</li>
+          <li><input type="checkbox">Formação dos juristas profissionais.</li>
+          <li><input type="checkbox">Universalização do ensino jurídico.</li>
+        </ul>
+
+        <h3><em>Utrumque ius</em></h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Estudo conjunto do Direito Romano e do Direito Canônico.</li>
+          <li><input type="checkbox">Formação do jurista medieval.</li>
+          <li><input type="checkbox">Direito comum europeu.</li>
+          <li><input type="checkbox">Relação entre normas civis e canônicas.</li>
+          <li><input type="checkbox">Influência na tradição romano-germânica.</li>
+        </ul>
+
+        <div class="bibliografia">
+          <h3>Leitura indicada</h3>
+          <p>
+            <strong>LOPES, José Reinaldo de Lima.</strong>
+            <em>O Direito na História: lições introdutórias</em>.
+          </p>
+          <ul>
+            <li>Capítulo 3, exceto o título 7;</li>
+            <li>Capítulo 4, títulos 1, 2, 4, 6 e 7;</li>
+            <li>Capítulo 5.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="moderno">
+        <div class="secao-titulo">
+          <span class="numero">Parte 5</span>
+          <h2>Direito Moderno</h2>
+        </div>
+
+        <h3>A universidade moderna</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Transformação das universidades.</li>
+          <li><input type="checkbox">Ensino sistemático do Direito.</li>
+          <li><input type="checkbox">Formação profissional dos juristas.</li>
+          <li><input type="checkbox">Profissionalização das carreiras jurídicas.</li>
+          <li><input type="checkbox">Separação gradual entre Direito, teologia e filosofia.</li>
+          <li><input type="checkbox">Papel das universidades no pensamento jurídico moderno.</li>
+        </ul>
+
+        <h3>Humanismo jurídico</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Influência do Renascimento.</li>
+          <li><input type="checkbox">Valorização da razão.</li>
+          <li><input type="checkbox">Crítica histórica dos textos jurídicos.</li>
+          <li><input type="checkbox">Retorno às fontes clássicas.</li>
+          <li><input type="checkbox">Estudo dos textos em seu contexto original.</li>
+          <li><input type="checkbox">Crítica às interpretações medievais.</li>
+          <li><input type="checkbox">Relação entre humanismo, ciência e Direito.</li>
+        </ul>
+
+        <h3><em>Usus modernus pandectarum</em></h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Adaptação do Direito Romano às necessidades modernas.</li>
+          <li><input type="checkbox">Uso prático dos textos romanos.</li>
+          <li><input type="checkbox">Relação entre Direito Romano e costumes locais.</li>
+          <li><input type="checkbox">Aplicação pelos tribunais.</li>
+          <li><input type="checkbox">Desenvolvimento do Direito comum.</li>
+        </ul>
+
+        <h3>Recepção e codificação</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Conceito de recepção jurídica.</li>
+          <li><input type="checkbox">Conceito de codificação.</li>
+          <li><input type="checkbox">Diferença entre compilação e codificação.</li>
+          <li><input type="checkbox">Busca de unidade, clareza e segurança jurídica.</li>
+          <li><input type="checkbox">Centralização da produção legislativa.</li>
+          <li><input type="checkbox">Formação do Estado moderno.</li>
+          <li><input type="checkbox">Superação da pluralidade jurídica medieval.</li>
+          <li><input type="checkbox">Influência do racionalismo.</li>
+        </ul>
+
+        <h3>Código Napoleão</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Contexto da Revolução Francesa.</li>
+          <li><input type="checkbox">Objetivos da codificação francesa.</li>
+          <li><input type="checkbox">Igualdade formal.</li>
+          <li><input type="checkbox">Propriedade privada.</li>
+          <li><input type="checkbox">Liberdade contratual.</li>
+          <li><input type="checkbox">Organização sistemática.</li>
+          <li><input type="checkbox">Centralização legislativa.</li>
+          <li><input type="checkbox">Influência sobre outros países e sobre o Brasil.</li>
+        </ul>
+
+        <h3>Escola Histórica do Direito</h3>
+        <ul class="lista-estudo">
+          <li><input type="checkbox">Surgimento na Alemanha.</li>
+          <li><input type="checkbox">Crítica à criação racional e abstrata do Direito.</li>
+          <li><input type="checkbox">Direito como produto da história e da cultura.</li>
+          <li><input type="checkbox">Importância dos costumes.</li>
+          <li><input type="checkbox">Ideia de espírito do povo.</li>
+          <li><input type="checkbox">Relação entre Direito e desenvolvimento histórico.</li>
+          <li><input type="checkbox">Debate com os defensores da codificação imediata.</li>
+        </ul>
