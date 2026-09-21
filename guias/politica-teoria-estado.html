@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Estudos — Política e Teoria do Estado I</title>
+
+  <style>
+    :root {
+      --azul: #17324d;
+      --azul-2: #244e70;
+      --azul-claro: #edf4f8;
+      --dourado: #b7893c;
+      --creme: #fbf8ef;
+      --texto: #27343d;
+      --cinza: #68757d;
+      --borda: #d8e0e5;
+      --verde: #2c7b59;
+      --sombra: 0 8px 24px rgba(20, 45, 65, .1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #edf0f2;
+      color: var(--texto);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    .pagina {
+      max-width: 1120px;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      box-shadow: var(--sombra);
+    }
+
+    header {
+      background:
+        linear-gradient(135deg, rgba(23, 50, 77, .98), rgba(36, 78, 112, .95)),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 12px,
+          rgba(255,255,255,.035) 13px
+        );
+      color: #fff;
+      padding: 62px 72px 58px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "⚖";
+      position: absolute;
+      right: 62px;
+      top: 24px;
+      color: rgba(255,255,255,.11);
+      font-size: 160px;
+      line-height: 1;
+    }
+
+    .etiqueta {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: 999px;
+      padding: 5px 14px;
+      margin-bottom: 18px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 780px;
+      margin: 0 0 15px;
+      color: #fff;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.1;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 0;
+      color: #e3edf3;
+      font-size: 19px;
+    }
+
+    main {
+      padding: 45px 72px 70px;
+    }
+
+    .informacoes {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 13px;
+      margin: -78px 0 38px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .info {
+      background: #fff;
+      border: 1px solid var(--borda);
+      border-top: 4px solid var(--dourado);
+      border-radius: 8px;
+      padding: 16px 18px;
+      box-shadow: var(--sombra);
+    }
+
+    .info strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--azul);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .info span {
+      font-size: 15px;
+    }
+
+    .aviso {
+      background: var(--creme);
+      border-left: 5px solid var(--dourado);
+      border-radius: 0 7px 7px 0;
+      padding: 17px 21px;
+      margin: 25px 0 35px;
+    }
+
+    .aviso strong {
+      color: var(--azul);
+    }
+
+    .indice {
+      background: var(--azul-claro);
+      border: 1px solid #cbdde8;
+      border-radius: 10px;
+      padding: 23px 27px;
+      margin-bottom: 45px;
+    }
+
+    .indice h2 {
+      margin: 0 0 12px;
+      color: var(--azul);
+      font-size: 23px;
+    }
+
+    .indice ol {
+      columns: 2;
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .indice li {
+      margin: 5px 0;
+      break-inside: avoid;
+    }
+
+    a {
+      color: #185a86;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 52px;
+      scroll-margin-top: 20px;
+    }
+
+    .titulo-secao {
+      border-bottom: 2px solid var(--dourado);
+      margin-bottom: 24px;
+      padding-bottom: 11px;
+    }
+
+    .titulo-secao small {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--dourado);
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .titulo-secao h2 {
+      margin: 0;
+      color: var(--azul);
+      font-size: 31px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 29px 0 11px;
+      color: var(--azul);
+      font-size: 23px;
+      line-height: 1.25;
+    }
+
+    h4 {
+      margin: 20px 0 8px;
+      color: var(--azul-2);
+      font-size: 18px;
+    }
+
+    p {
+      margin-top: 8px;
+    }
+
+    ul, ol {
+      padding-left: 27px;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px dotted #dce2e5;
+      padding: 6px 0;
+    }
+
+    .checklist input {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      margin-top: 6px;
+      accent-color: var(--verde);
+    }
+
+    .bloco {
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      background: #fff;
+      padding: 19px 22px;
+      margin: 18px 0;
+    }
+
+    .bloco h3:first-child,
+    .bloco h4:first-child {
+      margin-top: 0;
+    }
+
+    .colunas {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .bibliografia {
+      border-left: 4px solid var(--azul);
+      border-radius: 0 7px 7px 0;
+      background: #f6fafc;
+      padding: 18px 22px;
+      margin-top: 22px;
+    }
+
+    .bibliografia h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .referencias li {
+      margin-bottom: 12px;
+      overflow-wrap: anywhere;
+      break-inside: avoid;
+    }
+
+    .bibliografia p:last-child {
+      margin-bottom: 0;
+    }
+
+    .nota {
+      color: var(--cinza);
+      font-size: 14px;
+    }
+
+    .termo {
+      color: var(--verde);
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0 25px;
+      font-size: 15px;
+    }
+
+    th {
+      background: var(--azul);
+      color: #fff;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid var(--borda);
+      padding: 11px 13px;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafb;
+    }
+
+    .prioridades {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px 27px;
+      list-style: none;
+      padding: 0;
+      counter-reset: item;
+    }
+
+    .prioridades li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      counter-increment: item;
+    }
+
+    .prioridades li::before {
+      content: counter(item);
+      display: inline-grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      flex: 0 0 26px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: var(--dourado);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--azul);
+      color: #e6eef3;
+      padding: 28px 72px;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        padding: 42px 25px 95px;
+      }
+
+      header::after {
+        right: 16px;
+        top: 22px;
+        font-size: 115px;
+      }
+
+      main {
+        padding: 30px 22px 50px;
+      }
+
+      .informacoes {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -70px;
+      }
+
+      .colunas,
+      .prioridades {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding: 25px 22px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .informacoes {
+        grid-template-columns: 1fr;
+      }
+
+      .indice ol {
+        columns: 1;
+      }
+
+      .titulo-secao h2 {
+        font-size: 27px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .pagina {
+        max-width: none;
+        box-shadow: none;
+      }
+
+      header {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .bloco,
+      .bibliografia,
+      .aviso {
+        break-inside: avoid;
+      }
+
+      a {
+        color: #000;
+      }
+    }
+  </style>
+
+<style id="portal-estudos-integracao">
+  .portal-estudos-voltar{position:fixed;right:18px;bottom:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;padding:11px 15px;border-radius:999px;background:#102c43;color:#fff!important;text-decoration:none!important;font:700 13px/1.2 Arial,sans-serif;box-shadow:0 9px 24px rgba(16,44,67,.24);border:1px solid rgba(255,255,255,.18)}
+  .portal-estudos-voltar:hover{transform:translateY(-1px);background:#173f5f;text-decoration:none!important}
+  @media(max-width:620px){.portal-estudos-voltar{right:12px;bottom:12px;padding:10px 13px;font-size:12px}}
+  @media print{.portal-estudos-voltar{display:none!important}}
+</style>
+<style id="notion-dark-override">
+  :root{--azul:#f2f2f2;--azul-2:#dfdfdf;--azul-claro:#202020;--dourado:#9d9d9d;--creme:#1f1f1f;--texto:#ededed;--cinza:#a4a4a4;--borda:#323232;--verde:#d9d9d9;--sombra:0 20px 40px rgba(0,0,0,.22)}
+  html{scroll-behavior:smooth}
+  body{background:#191919!important;color:var(--texto)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif!important;line-height:1.7}
+  .pagina{max-width:1160px!important;background:#191919!important;box-shadow:none!important}
+  .portal-topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 24px;border-bottom:1px solid var(--borda);background:#171717;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+  .portal-topbar .left{display:flex;align-items:center;gap:10px;min-width:0}
+  .portal-topbar .mark{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:#222;border:1px solid #333;color:#f3f3f3;font-size:12px;font-weight:800;letter-spacing:.06em}
+  .portal-topbar strong{display:block;font-size:14px;letter-spacing:-.01em}
+  .portal-topbar span{display:block;color:var(--cinza);font-size:12px}
+  .portal-topbar .back-link{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid var(--borda);background:#202020;color:#f0f0f0;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap}
+  header{background:#1f1f1f!important;border:1px solid var(--borda);border-radius:20px;padding:42px 44px 36px!important;margin:22px 24px 0;overflow:hidden}
+  header::after{display:none!important}
+  .etiqueta{background:#222!important;border-color:#353535!important;color:#bdbdbd!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-weight:700!important;letter-spacing:.08em!important;padding:6px 10px!important}
+  header h1{font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;color:#f4f4f4!important;font-size:clamp(30px,4vw,46px)!important;line-height:1.1!important;letter-spacing:-.03em}
+  header p{color:#d0d0d0!important;font-size:15px!important;max-width:860px!important}
+  main{padding:24px 24px 50px!important}
+  .informacoes,.meta{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))!important;gap:12px!important;margin:-36px 0 28px!important;position:relative;z-index:2}
+  .info,.meta-card{background:#202020!important;border:1px solid var(--borda)!important;border-top:none!important;border-radius:14px!important;box-shadow:none!important;padding:16px 16px!important}
+  .info strong,.meta-card strong{color:#8f8f8f!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;margin-bottom:6px!important}
+  .info span,.meta-card span,.meta-card div:last-child{color:#f0f0f0!important;font-size:14px!important}
+  .progresso{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 24px;padding:16px 18px;background:#202020;border:1px solid var(--borda);border-radius:14px}
+  .progresso p{margin:0;color:#d2d2d2;font-size:14px}
+  .barra{flex:1 1 240px;height:8px;background:#2a2a2a;border-radius:999px;overflow:hidden}
+  .barra-interna{height:100%!important;background:#ececec!important;border-radius:inherit!important}
+  .botao-limpar,.limpar{border:1px solid var(--borda)!important;background:#242424!important;color:#ededed!important;border-radius:10px!important;padding:10px 12px!important;font-weight:700!important;cursor:pointer}
+  .aviso{background:#1f1f1f!important;border:1px solid var(--borda)!important;border-left:3px solid #8e8e8e!important;color:#d8d8d8!important;border-radius:14px!important;padding:18px 18px!important;margin:20px 0 28px!important}
+  .aviso strong{color:#f2f2f2!important}
+  .indice{background:#202020!important;border:1px solid var(--borda)!important;border-radius:16px!important;padding:22px 22px!important;margin-bottom:28px!important}
+  .indice h2{color:#f2f2f2!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:20px!important;margin:0 0 12px!important}
+  .indice ol{columns:2;gap:22px}
+  .indice a{color:#d7d7d7!important;text-decoration:none}
+  .indice a:hover{text-decoration:underline}
+  section{margin-bottom:38px!important}
+  .titulo-secao,.secao-titulo{border-bottom:1px solid var(--borda)!important;padding-bottom:12px!important;margin-bottom:18px!important;display:flex;flex-direction:column;gap:4px}
+  .titulo-secao small,.secao-titulo small,.numero{color:#9a9a9a!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase!important;font-weight:700!important}
+  .titulo-secao h2,.secao-titulo h2{color:#f2f2f2!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:28px!important;line-height:1.2!important;margin:0!important;letter-spacing:-.03em}
+  h3,h4{color:#ededed!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;letter-spacing:-.02em}
+  h3{font-size:21px!important;margin:24px 0 10px!important}
+  h4{font-size:17px!important;margin:18px 0 8px!important}
+  p,li,td,th,span,div{word-break:normal;overflow-wrap:anywhere}
+  p{color:#d2d2d2!important}
+  ul,ol{padding-left:24px}
+  li{color:#d8d8d8!important}
+  .bloco,.bloco-destaque,.destaque,.bibliografia,.link-material{background:#202020!important;border:1px solid var(--borda)!important;border-radius:14px!important;padding:18px 18px!important;box-shadow:none!important}
+  .bibliografia{border-left:3px solid #8d8d8d!important;background:#1f1f1f!important}
+  .bibliografia h3{margin-top:0!important}
+  .nota{color:#a5a5a5!important}
+  .termo{color:#f1f1f1!important}
+  .checklist{list-style:none;padding-left:0}
+  .checklist li,.lista-estudo li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #2f2f2f!important}
+  .checklist li:last-child,.lista-estudo li:last-child{border-bottom:none!important}
+  .checklist input{width:17px;height:17px;margin-top:5px;accent-color:#e6e6e6}
+  table{width:100%;border-collapse:collapse;background:#202020;border:1px solid var(--borda)!important;border-radius:14px!important;overflow:hidden}
+  th{background:#232323!important;color:#f3f3f3!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;font-size:12px!important;letter-spacing:.04em;text-transform:uppercase}
+  td,th{border:1px solid var(--borda)!important;padding:11px 12px!important;color:#d7d7d7!important}
+  tr:nth-child(even) td{background:#1d1d1d!important}
+  .prioridades,.colunas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px}
+  .prioridades li::before{background:#333!important;color:#fff!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important}
+  a{color:#f0f0f0!important}
+  a:hover{text-decoration:underline}
+  footer{background:#171717!important;border-top:1px solid var(--borda)!important;color:#adadad!important;padding:22px 24px!important;font-family:Inter,ui-sans-serif,system-ui,sans-serif!important}
+  footer strong{color:#f2f2f2!important}
+  .portal-estudos-voltar{background:#efefef!important;color:#151515!important;border:1px solid #efefef!important;box-shadow:0 14px 28px rgba(0,0,0,.25)!important;padding:11px 15px!important;font:700 13px/1.2 Inter,ui-sans-serif,system-ui,sans-serif!important}
+  .portal-estudos-voltar:hover{background:#ffffff!important;color:#111!important;transform:translateY(-1px)}
+  .link-material{display:inline-flex!important;align-items:center;gap:8px;padding:10px 12px!important;text-decoration:none!important}
+  @media (max-width:850px){header{margin:16px 16px 0;padding:30px 22px!important}main{padding:20px 16px 42px!important}.portal-topbar{padding:14px 16px}.informacoes,.meta{grid-template-columns:1fr 1fr!important;margin-top:-22px!important}.indice ol{columns:1}.prioridades,.colunas{grid-template-columns:1fr!important}footer{padding:18px 16px!important}}
+  @media (max-width:560px){.informacoes,.meta{grid-template-columns:1fr!important}.portal-topbar{flex-direction:column;align-items:flex-start}.portal-topbar .back-link{width:100%;justify-content:center}}
+  @media print{body{background:#fff!important;color:#000!important}.portal-topbar,.portal-estudos-voltar{display:none!important}.pagina{background:#fff!important}header,.bloco,.bibliografia,.aviso,.indice,.info,.meta-card{border-color:#bbb!important;background:#fff!important;color:#000!important;box-shadow:none!important}}
+</style>
+  <link rel="stylesheet" href="../assets/guide-enhancements.css">
+</head>
+
+<body>
+  <div class="pagina">
+    <div class="portal-topbar">
+      <div class="left">
+        <div class="mark">PET</div>
+        <div><strong>Política e Teoria do Estado I</strong><span>Modo escuro • Progresso salvo no navegador</span></div>
+      </div>
+      <a class="back-link" href="../index.html">← Voltar ao Portal</a>
+    </div>
+
+
+    <header>
+      <span class="etiqueta">Guia completo de estudos</span>
+      <h1>Política e Teoria do Estado I</h1>
+      <p>
+        Conteúdos programáticos organizados por unidades, temas de revisão,
+        conceitos fundamentais e bibliografia indicada no plano de ensino.
+      </p>
+    </header>
+
+    <main>
+
+      <div class="informacoes">
+        <div class="info">
+          <strong>Disciplina</strong>
+          <span>Política e Teoria do Estado I</span>
+        </div>
+
+        <div class="info">
+          <strong>Código</strong>
+          <span>DIR 3005</span>
+        </div>
+
+        <div class="info">
+          <strong>Créditos</strong>
+          <span>4 créditos</span>
+        </div>
+
+        <div class="info">
+          <strong>Docente</strong>
+          <span>Carlos Eduardo Dieder Reverbel</span>
+        </div>
+      </div>
+
+      <div class="aviso">
+        <strong>Como utilizar este documento:</strong>
+        percorra as unidades em ordem, leia os materiais indicados e marque
+        os tópicos já estudados. A disciplina analisa a formação histórica,
+        social, política e institucional do Estado, além de suas formas
+        contemporâneas e de suas relações com a sociedade.
+      </div>
+
+      <nav class="indice">
+        <h2>Índice</h2>
+        <ol>
+          <li><a href="#disciplina">A disciplina Política e Teoria do Estado</a></li>
+          <li><a href="#objeto">Objeto material da disciplina</a></li>
+          <li><a href="#conteudo">Conteúdo e formas de abordagem</a></li>
+          <li><a href="#estudo">Estudo da disciplina</a></li>
+          <li><a href="#unidade-politica">Tipos de unidade política</a></li>
+          <li><a href="#antiga">Unidade Política Antiga</a></li>
+          <li><a href="#medieval">Unidade Política Ocidental Medieval</a></li>
+          <li><a href="#moderno">Estado Moderno</a></li>
+          <li><a href="#contemporaneo">Tipos contemporâneos de Estado</a></li>
+          <li><a href="#autoritarismos">Autoritarismos e totalitarismos</a></li>
+          <li><a href="#doutrinas">Doutrinas, ideologias e ação política</a></li>
+          <li><a href="#futuro">O futuro do Estado</a></li>
+          <li><a href="#teoria-social">Teoria Social do Estado</a></li>
+          <li><a href="#elementos">Elementos essenciais do Estado</a></li>
+          <li><a href="#estado-sociedade">Estado e sociedade</a></li>
+          <li><a href="#formacao">Formação da sociedade política</a></li>
+          <li><a href="#comparacoes">Comparações entre Estados Unidos e Brasil</a></li>
+          <li><a href="#bibliografia">Bibliografia e materiais</a></li>
+          <li><a href="#prioridades">Prioridades para a avaliação</a></li>
+        </ol>
+      </nav>
+
+      <section id="disciplina">
+        <div class="titulo-secao">
+          <small>Unidade I — Fundamentos</small>
+          <h2>A disciplina Política e Teoria do Estado</h2>
+        </div>
+
+        <h3>1. Política como ramo do conhecimento</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Conceito de Política.</li>
+          <li><input type="checkbox">A Política como área do conhecimento.</li>
+          <li><input type="checkbox">Relação entre Política, poder e sociedade.</li>
+          <li><input type="checkbox">A formação histórica da Ciência Política.</li>
+          <li><input type="checkbox">As três fases da Ciência Política.</li>
+          <li><input type="checkbox">A posição curricular da Ciência Política no Brasil.</li>
+          <li><input type="checkbox">A posição curricular da Ciência Política no Rio Grande do Sul.</li>
+          <li><input type="checkbox">O objeto material da Ciência Política.</li>
+          <li><input type="checkbox">O objeto formal da Ciência Política.</li>
+        </ul>
+
+        <h3>2. Teoria Geral do Estado</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Conceito de Teoria Geral do Estado.</li>
+          <li><input type="checkbox">Gênese histórica da Teoria Geral do Estado.</li>
+          <li><input type="checkbox">Desenvolvimento da Teoria do Estado como disciplina.</li>
+          <li><input type="checkbox">Posição curricular da Teoria Geral do Estado no Brasil.</li>
+          <li><input type="checkbox">Posição curricular da Teoria Geral do Estado no Rio Grande do Sul.</li>
+          <li><input type="checkbox">Objeto material da Teoria Geral do Estado.</li>
+          <li><input type="checkbox">Objeto formal da Teoria Geral do Estado.</li>
+        </ul>
+
+        <h3>3. A combinação entre Política e Teoria do Estado</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Gênese histórica da disciplina Política e Teoria do Estado.</li>
+          <li><input type="checkbox">Razões para a combinação entre Ciência Política e Teoria do Estado.</li>
+          <li><input type="checkbox">Denominação da disciplina.</li>
+          <li><input type="checkbox">Posição curricular da disciplina no Brasil e no Rio Grande do Sul.</li>
+          <li><input type="checkbox">Objeto material da disciplina.</li>
+          <li><input type="checkbox">Objeto formal da disciplina.</li>
+          <li><input type="checkbox">As duas perspectivas de análise: política e estatal.</li>
+        </ul>
+      </section>
+
+      <section id="objeto">
+        <div class="titulo-secao">
+          <small>Unidade I — Capítulo 2</small>
+          <h2>Objeto material da Política e Teoria do Estado</h2>
+        </div>
+
+        <h3>1. O termo Estado</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Origem e significado da palavra Estado.</li>
+          <li><input type="checkbox">Uso histórico do conceito de Estado.</li>
+          <li><input type="checkbox">Diferença entre Estado, governo, nação e sociedade.</li>
+          <li><input type="checkbox">Estado como unidade política.</li>
+          <li><input type="checkbox">Estado como organização do poder político.</li>
+        </ul>
+
+        <h3>2. Dificuldades para conceituar o Estado</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">A diversidade histórica das unidades políticas.</li>
+          <li><input type="checkbox">A multiplicidade de formas estatais.</li>
+          <li><input type="checkbox">A diferença entre o Estado antigo e o Estado moderno.</li>
+          <li><input type="checkbox">As dimensões política, jurídica, social, econômica e territorial do Estado.</li>
+          <li><input type="checkbox">As limitações das definições unilaterais.</li>
+        </ul>
+
+        <h3>3. Definição pelas cinco causas</h3>
+        <p>
+          O plano propõe o estudo do Estado a partir de uma definição construída
+          pelas cinco causas. Organize a revisão considerando:
+        </p>
+
+        <ul class="checklist">
+          <li><input type="checkbox">A causa material.</li>
+          <li><input type="checkbox">A causa formal.</li>
+          <li><input type="checkbox">A causa eficiente.</li>
+          <li><input type="checkbox">A causa final.</li>
+          <li><input type="checkbox">A dimensão histórica ou dinâmica da formação estatal.</li>
+          <li><input type="checkbox">A relação entre território, povo, poder, organização e finalidade.</li>
+        </ul>
+
+        <div class="aviso">
+          <strong>Para revisar:</strong>
+          saiba explicar por que uma única definição não é suficiente para
+          compreender todas as formas históricas de organização política.
+        </div>
+      </section>
+
+      <section id="conteudo">
+        <div class="titulo-secao">
+          <small>Unidade I — Capítulo 3</small>
+          <h2>Conteúdo da disciplina: modos de concebê-lo</h2>
+        </div>
+
+        <p>
+          O plano apresenta diferentes maneiras de organizar o conteúdo da
+          Política e Teoria do Estado.
+        </p>
+
+        <div class="colunas">
+          <div class="bloco">
+            <h3>Concepções unidimensionais</h3>
+            <ul class="checklist">
+              <li><input type="checkbox">Análise do Estado por uma única dimensão.</li>
+              <li><input type="checkbox">Limitações das explicações unidimensionais.</li>
+              <li><input type="checkbox">Exemplos de enfoque exclusivamente jurídico, político ou social.</li>
+            </ul>
+          </div>
+
+          <div class="bloco">
+            <h3>Concepções bidimensionais</h3>
+            <ul class="checklist">
+              <li><input type="checkbox">Análise do Estado por duas dimensões.</li>
+              <li><input type="checkbox">Relação entre dimensões política e jurídica.</li>
+              <li><input type="checkbox">Relação entre dimensões social e institucional.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bloco">
+          <h3>Concepções tridimensionais</h3>
+          <ul class="checklist">
+            <li><input type="checkbox">Análise política, jurídica e social.</li>
+            <li><input type="checkbox">Integração entre fato, valor e norma.</li>
+            <li><input type="checkbox">Vantagens e limites da abordagem tridimensional.</li>
+          </ul>
+        </div>
+
+        <div class="bloco">
+          <h3>Concepção pentadimensional adotada</h3>
+          <p>
+            O plano informa que a disciplina adota uma abordagem
+            <span class="termo">pentadimensional</span>. Para a revisão, relacione
+            o Estado às seguintes dimensões:
+          </p>
+
+          <ul class="checklist">
+            <li><input type="checkbox">Dimensão social.</li>
+            <li><input type="checkbox">Dimensão econômica.</li>
+            <li><input type="checkbox">Dimensão territorial.</li>
+            <li><input type="checkbox">Dimensão política.</li>
+            <li><input type="checkbox">Dimensão jurídica e institucional.</li>
+            <li><input type="checkbox">Interação entre as cinco dimensões.</li>
+            <li><input type="checkbox">Aplicação da abordagem pentadimensional às unidades políticas históricas.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="estudo">
+        <div class="titulo-secao">
+          <small>Unidade I — Capítulo 4</small>
+          <h2>Estudo da Política e Teoria do Estado</h2>
+        </div>
+
+        <h3>1. Relações com outras disciplinas</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Relação com o Direito Constitucional.</li>
+          <li><input type="checkbox">Relação com a Ciência Política.</li>
+          <li><input type="checkbox">Relação com a Sociologia.</li>
+          <li><input type="checkbox">Relação com a História.</li>
+          <li><input type="checkbox">Relação com a Filosofia Política.</li>
+          <li><input type="checkbox">Relação com a Economia.</li>
+          <li><input type="checkbox">Relação com a Geografia Política.</li>
+          <li><input type="checkbox">Relação com a Antropologia.</li>
+        </ul>
+
+        <h3>2. Metodologia</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Método histórico.</li>
+          <li><input type="checkbox">Método sociológico.</li>
+          <li><input type="checkbox">Método jurídico.</li>
+          <li><input type="checkbox">Método comparativo.</li>
+          <li><input type="checkbox">Análise institucional.</li>
+          <li><input type="checkbox">Análise das ideias políticas.</li>
+          <li><input type="checkbox">Interpretação dos fenômenos estatais.</li>
+        </ul>
+
+        <h3>3. Bibliografia mínima</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Identificação dos autores indicados pelo professor.</li>
+          <li><input type="checkbox">Leitura dos textos disponibilizados no Moodle.</li>
+          <li><input type="checkbox">Consulta aos materiais da Sala de Aula Virtual.</li>
+          <li><input type="checkbox">Acompanhamento das aulas e materiais do Microsoft Teams.</li>
+          <li><input type="checkbox">Revisão dos textos, áudios e vídeos indicados.</li>
+        </ul>
+      </section>
+
+      <section id="unidade-politica">
+        <div class="titulo-secao">
+          <small>Unidade II</small>
+          <h2>Tipos de unidade política até as revoluções liberais</h2>
+        </div>
+
+        <p>
+          A segunda unidade acompanha a evolução histórica das formas de
+          organização política, desde as unidades antigas até a formação do
+          Estado moderno e das instituições liberais.
+        </p>
+
+        <ul class="checklist">
+          <li><input type="checkbox">Conceito de unidade política.</li>
+          <li><input type="checkbox">Diferenças entre comunidades, cidades, reinos e Estados.</li>
+          <li><input type="checkbox">Relação entre território e poder.</li>
+          <li><input type="checkbox">Relação entre religião e autoridade política.</li>
+          <li><input type="checkbox">Formas de concentração e distribuição do poder.</li>
+          <li><input type="checkbox">Evolução das instituições políticas.</li>
+          <li><input type="checkbox">Transição das unidades antigas para a unidade política ocidental.</li>
+          <li><input type="checkbox">Formação histórica do Estado burocrático, concentrado, territorial, nacional e moderno.</li>
+        </ul>
+      </section>
+
+      <section id="antiga">
+        <div class="titulo-secao">
+          <small>Unidade II — Capítulo 1</small>
+          <h2>A Unidade Política Antiga</h2>
+        </div>
+
+        <h3>1. Unidade Política Antiga Oriental</h3>
+        <p>Estude as características das primeiras organizações políticas orientais.</p>
+
+        <ul class="checklist">
+          <li><input type="checkbox">Formação das unidades políticas antigas orientais.</li>
+          <li><input type="checkbox">Centralização do poder.</li>
+          <li><input type="checkbox">Poder político e poder religioso.</li>
+          <li><input type="checkbox">Sacralização da autoridade.</li>
+          <li><input type="checkbox">Organização administrativa.</li>
+          <li><input type="checkbox">Controle do território.</li>
+          <li><input type="checkbox">Tributação e trabalho coletivo.</li>
+          <li><input type="checkbox">Exércitos e defesa.</li>
+          <li><input type="checkbox">Relação entre autoridade, tradição e religião.</li>
+        </ul>
+
+        <h3>2. Unidade Política Antiga Ocidental</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">A cidade antiga como unidade política.</li>
+          <li><input type="checkbox">A pólis grega.</li>
+          <li><input type="checkbox">Cidadania e participação política.</li>
+          <li><input type="checkbox">Exclusões dentro da cidadania antiga.</li>
+          <li><input type="checkbox">República e Império em Roma.</li>
+          <li><input type="checkbox">Instituições políticas greco-romanas.</li>
+          <li><input type="checkbox">Relação entre lei, cidadania e poder.</li>
+          <li><input type="checkbox">Influência da Antiguidade ocidental na tradição política posterior.</li>
+        </ul>
+
+        <div class="aviso">
+          <strong>Comparação importante:</strong>
+          compare a unidade política antiga oriental, marcada pela forte
+          sacralização e centralização do poder, com a unidade política antiga
+          ocidental, marcada pela cidade, cidadania, deliberação e instituições.
+        </div>
+      </section>
+
+      <section id="medieval">
+        <div class="titulo-secao">
+          <small>Unidade II — Formação ocidental</small>
+          <h2>A unidade política ocidental medieval</h2>
+        </div>
+
+        <h3>1. Gênese medieval</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Transformações após a Antiguidade.</li>
+          <li><input type="checkbox">Queda e fragmentação do poder romano ocidental.</li>
+          <li><input type="checkbox">Formação dos reinos medievais.</li>
+          <li><input type="checkbox">Influência dos povos germânicos.</li>
+          <li><input type="checkbox">Influência do Cristianismo.</li>
+          <li><input type="checkbox">Relação entre Igreja e poder político.</li>
+        </ul>
+
+        <h3>2. Reino Medieval Feudal</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Feudalismo.</li>
+          <li><input type="checkbox">Fragmentação territorial.</li>
+          <li><input type="checkbox">Relações de vassalagem.</li>
+          <li><input type="checkbox">Senhorio e dependência pessoal.</li>
+          <li><input type="checkbox">Poder local dos senhores feudais.</li>
+          <li><input type="checkbox">Pluralidade de ordens e jurisdições.</li>
+          <li><input type="checkbox">Costumes locais.</li>
+          <li><input type="checkbox">Cidades e corporações.</li>
+          <li><input type="checkbox">Igreja como instituição universal.</li>
+          <li><input type="checkbox">Império e reinos.</li>
+        </ul>
+
+        <h3>3. Da fragmentação à concentração política</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Fortalecimento das monarquias.</li>
+          <li><input type="checkbox">Centralização progressiva do poder.</li>
+          <li><input type="checkbox">Formação dos exércitos permanentes.</li>
+          <li><input type="checkbox">Criação de uma administração central.</li>
+          <li><input type="checkbox">Unificação dos sistemas jurídicos.</li>
+          <li><input type="checkbox">Formação dos territórios nacionais.</li>
+          <li><input type="checkbox">Superação gradual do sistema feudal.</li>
+        </ul>
+      </section>
+
+      <section id="moderno">
+        <div class="titulo-secao">
+          <small>Unidade II — Estado moderno</small>
+          <h2>Do reino medieval ao Estado moderno</h2>
+        </div>
+
+        <p>
+          O plano caracteriza a unidade política ocidental moderna como
+          burocrática, concentrada, territorial, nacional e moderna.
+        </p>
+
+        <div class="colunas">
+          <div class="bloco">
+            <h3>Estado burocrático</h3>
+            <ul class="checklist">
+              <li><input type="checkbox">Administração permanente.</li>
+              <li><input type="checkbox">Funcionários especializados.</li>
+              <li><input type="checkbox">Organização hierárquica.</li>
+              <li><input type="checkbox">Procedimentos administrativos.</li>
+              <li><input type="checkbox">Separação entre patrimônio público e privado.</li>
+            </ul>
+          </div>
+
+          <div class="bloco">
+            <h3>Estado concentrado</h3>
+            <ul class="checklist">
+              <li><input type="checkbox">Concentração do poder político.</li>
+              <li><input type="checkbox">Fortalecimento da autoridade central.</li>
+              <li><input type="checkbox">Redução dos poderes locais.</li>
+              <li><input type="checkbox">Monopólio da coerção legítima.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="colunas">
+          <div class="bloco">
+            <h3>Estado territorial</h3>
+            <ul class="checklist">
+              <li><input type="checkbox">Delimitação do território.</li>
+              <li><input type="checkbox">Controle das fronteiras.</li>
+              <li><input type="checkbox">Soberania territorial.</li>
+              <li><input type="checkbox">Administração uniforme do espaço.</li>
+            </ul>
+          </div>
+
+          <div class="bloco">
+            <h3>Estado nacional</h3>
+            <ul class="checklist">
+              <li><input type="checkbox">Formação da identidade nacional.</li>
+              <li><input type="checkbox">Unificação política e cultural.</li>
+              <li><input type="checkbox">Nação e pertencimento.</li>
+              <li><input type="checkbox">Relação entre povo, território e soberania.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Características gerais do Estado moderno</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Soberania.</li>
+          <li><input type="checkbox">Território definido.</li>
+          <li><input type="checkbox">Povo submetido à autoridade estatal.</li>
+          <li><input type="checkbox">Governo centralizado.</li>
+          <li><input type="checkbox">Administração burocrática.</li>
+          <li><input type="checkbox">Exército e forças de coerção.</li>
+          <li><input type="checkbox">Sistema tributário.</li>
+          <li><input type="checkbox">Unificação jurídica.</li>
+          <li><input type="checkbox">Construção da nacionalidade.</li>
+        </ul>
+      </section>
+
+      <section id="contemporaneo">
+        <div class="titulo-secao">
+          <small>Unidade III — Estados contemporâneos</small>
+          <h2>Tipos contemporâneos de Estado</h2>
+        </div>
+
+        <h3>1. Estado Liberal Clássico</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Contexto das revoluções liberais.</li>
+          <li><input type="checkbox">Limitação do poder estatal.</li>
+          <li><input type="checkbox">Direitos individuais.</li>
+          <li><input type="checkbox">Liberdade econômica.</li>
+          <li><input type="checkbox">Propriedade privada.</li>
+          <li><input type="checkbox">Igualdade formal.</li>
+          <li><input type="checkbox">Constitucionalismo.</li>
+          <li><input type="checkbox">Separação de poderes.</li>
+          <li><input type="checkbox">Estado mínimo.</li>
+          <li><input type="checkbox">Não intervenção na economia e na sociedade.</li>
+        </ul>
+
+        <h3>2. Estado Liberal Pluralista</h3>
+        <ul class="checklist">
+          <li><input type="checkbox">Pluralismo político.</li>
+          <li><input type="checkbox">Partidos políticos.</li>
+          <li><input type="checkbox">Grupos de interesse.</li>
+          <li><input type="checkbox">Associações civis.</li>
+          <li><input type="checkbox">Participação política organizada.</li>
+          <li><input type="checkbox">Representação.</li>
+          <li><input type="checkbox">Conflito e negociação entre grupos.</li>
