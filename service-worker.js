@@ -1,4 +1,4 @@
-const CACHE='portal-estudos-web-v7';
+const CACHE='portal-estudos-web-v8';
 const FILES=[
   './','./index.html','./atlas-das-ideias.html','./site.webmanifest','./site-manifest.json','./MANUAL-DE-USO.html',
   './assets/search-index.js','./assets/jszip.min.js','./assets/web-backend.js','./assets/guide-enhancements.js','./assets/guide-enhancements.css',
